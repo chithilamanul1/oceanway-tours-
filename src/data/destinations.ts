@@ -1,0 +1,163 @@
+import { Destination } from '@/types/content';
+
+export const destinationsSeed: Destination[] = [
+  // ── Sri Lanka ──
+  {
+    id: 'dest-colombo',
+    name: 'Colombo',
+    region: 'Western Province',
+    tag: 'Sri Lanka',
+    tagline: 'Vibrant coastal capital where colonial history meets contemporary urban charm',
+    description:
+      'Colombo is Sri Lanka’s pulsating oceanfront metropolis, featuring a fascinating blend of grand colonial architecture, bustling open-air bazaars in Pettah, and cosmopolitan seaside dining along Galle Face Green.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/3a91d4f3-e4c3-4c33-ab9b-1bbaadfb6556.jpg',
+    bestSeason: 'November to April',
+  },
+  {
+    id: 'dest-kandy',
+    name: 'Kandy',
+    region: 'Central Province',
+    tag: 'Sri Lanka',
+    tagline: 'The sacred hill country bastion surrounded by misty peaks and tea plantations',
+    description:
+      'Set around an idyllic peaceful lake, Kandy is the cultural heartland of Sri Lanka and home to the sacred Temple of the Sacred Tooth Relic, Royal Botanical Gardens, and traditional Kandyan dance performances.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/8cb0359e-dfc0-47ad-93d0-b1e99cf670bd.jpg',
+    bestSeason: 'December to April',
+  },
+  {
+    id: 'dest-sigiriya',
+    name: 'Sigiriya',
+    region: 'Cultural Triangle',
+    tag: 'Sri Lanka',
+    tagline: 'Ancient sky fortress rising dramatically above emerald jungle canopies',
+    description:
+      'Dominated by the awe-inspiring 5th-century Lion Rock citadel, Sigiriya is an archaeological marvel of water gardens, world-famous frescoes, and breathtaking panoramic vistas over Sri Lanka’s dry zone forests.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/dd19e250-c9f2-43c1-9669-e3a2cfbedd8e.jpg',
+    bestSeason: 'January to April',
+  },
+  {
+    id: 'dest-galle',
+    name: 'Galle',
+    region: 'Southern Province',
+    tag: 'Sri Lanka',
+    tagline: 'Enchanting Dutch-colonial fortified town on the sun-drenched southern coast',
+    description:
+      'Encircled by sturdy sea-facing ramparts, the UNESCO-listed Galle Fort is a living museum filled with artisan boutiques, restored 17th-century villas, gourmet seafood eateries, and evocative ocean sunsets.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/cb3b6cb8-ff31-40c7-b69b-f853763e43dc.jpg',
+    bestSeason: 'November to April',
+  },
+  {
+    id: 'dest-ella',
+    name: 'Ella',
+    region: 'Badulla District',
+    tag: 'Sri Lanka',
+    tagline: 'Highland mountain haven of cascading waterfalls, scenic rails, and lush gaps',
+    description:
+      'Nestled high in the misty central highlands, Ella draws travelers with its iconic Nine Arches Bridge, invigorating hikes up Little Adam’s Peak, and rolling valleys carpeted in world-renowned Ceylon tea.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/e445e8fc-0b9a-4a0e-ae29-b945ec2f8d7e.jpg',
+    bestSeason: 'January to May',
+  },
+  {
+    id: 'dest-yala',
+    name: 'Yala',
+    region: 'Southern & Uva Provinces',
+    tag: 'Sri Lanka',
+    tagline: 'Premier wilderness sanctuary famed for high leopard density and wild herds',
+    description:
+      'Sri Lanka’s most renowned national park spans diverse ecosystems ranging from thorn forests to coastal lagoons, harboring one of the highest densities of leopards in the world alongside Asian elephants and sloth bears.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/29d0e984-c8c7-4068-92ed-88f2f6902abc.jpg',
+    bestSeason: 'February to June',
+  },
+  {
+    id: 'dest-negombo',
+    name: 'Negombo',
+    region: 'Western Province',
+    tag: 'Sri Lanka',
+    tagline: 'Bustling coastal fishing town celebrated for golden sands and lagoon boat trails',
+    description:
+      'Situated conveniently near Bandaranaike International Airport, Negombo welcomes visitors with its sprawling golden beach, atmospheric Dutch canal waterways, and vibrant early morning fish markets.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/295a7f56-a405-446d-b541-c353c7eef390.jpg',
+    bestSeason: 'December to April',
+  },
+  {
+    id: 'dest-trincomalee',
+    name: 'Trincomalee',
+    region: 'Eastern Province',
+    tag: 'Sri Lanka',
+    tagline: 'Pristine deep-water bay with powdery beaches, blue whales, and ancient temples',
+    description:
+      'Set on one of the finest natural harbors in the world, Trincomalee enchants with tranquil beaches like Nilaveli, thrilling blue whale watching excursions, and the clifftop Koneswaram Hindu temple.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/84ae94ba-ffc8-4ce7-addd-bd78c75dab92.jpg',
+    bestSeason: 'May to October',
+  },
+
+  // ── Saudi Arabia ──
+  {
+    id: 'dest-riyadh',
+    name: 'Riyadh',
+    region: 'Najd',
+    tag: 'Saudi Arabia',
+    tagline: 'Dynamic desert metropolis bridging ancient heritage with hyper-futuristic horizons',
+    description:
+      'The Kingdom’s capital juxtaposes mud-brick fortresses like Al Masmak and the UNESCO-listed Diriyah with soaring architectural marvels, world-class dining, and thriving cultural districts.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/710acca0-7433-4231-b9f4-1e43fc9a89e0.jpg',
+    bestSeason: 'November to March',
+  },
+  {
+    id: 'dest-jeddah',
+    name: 'Jeddah',
+    region: 'Hejaz',
+    tag: 'Saudi Arabia',
+    tagline: 'Historic Red Sea port renowned for coral architecture and breezy coastal corniche',
+    description:
+      'Gateway to the holy sanctuaries, Jeddah is celebrated for the labyrinthine alleys of Al-Balad with its delicate wooden Roshan balconies, sculpture-filled seafront promenades, and world-class diving.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/fbdfe4c2-b4b6-4284-88a4-9896fd436f8c.jpg',
+    bestSeason: 'October to April',
+  },
+  {
+    id: 'dest-alula',
+    name: 'AlUla',
+    region: 'Medina Province',
+    tag: 'Saudi Arabia',
+    tagline: 'Open-air living museum carved into surreal sandstone canyons and Nabataean tombs',
+    description:
+      'An ancient crossroads of civilizations, AlUla showcases monumental Nabataean tombs at Hegra, mirrored concert halls, lush dates oases, and striking natural rock formations under dark starry skies.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/3520734f-97ba-4c5a-b498-325086224c14.jpg',
+    bestSeason: 'October to April',
+  },
+  {
+    id: 'dest-medina',
+    name: 'Medina',
+    region: 'Medina Province',
+    tag: 'Saudi Arabia',
+    tagline: 'Sacred sanctuary of radiant peace, majestic courtyards, and deep spiritual legacy',
+    description:
+      'One of Islam’s most revered cities, Medina welcomes cultural and heritage travelers to admire its serene desert architecture, historic battle sites, date palm groves, and rich Islamic heritage museums.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/e1fa99c6-eafa-4f3f-abab-031adf7300bb.jpg',
+    bestSeason: 'November to March',
+  },
+
+  // ── Bahrain ──
+  {
+    id: 'dest-manama',
+    name: 'Manama',
+    region: 'Capital Governorate',
+    tag: 'Bahrain',
+    tagline: 'Cosmopolitan Gulf capital blending historic souqs with gleaming waterfront towers',
+    description:
+      'Manama is a vibrant island capital where traditional spices and gold stalls in Bab Al Bahrain sit alongside contemporary art galleries, Michelin-starred cuisine, and modern waterfront marinas.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/c98694b3-443a-4dee-b9f7-c09978bdfccc.jpg',
+    bestSeason: 'November to April',
+  },
+  {
+    id: 'dest-muharraq',
+    name: 'Muharraq',
+    region: 'Muharraq Governorate',
+    tag: 'Bahrain',
+    tagline: 'Heart of Bahrain’s pearling legacy with storied alleyways and restored merchant estates',
+    description:
+      'The former capital preserves Bahrain’s UNESCO Pearling Path, adorned with intricately restored coral stone houses, wind towers, artisan workshops, and authentic traditional halwa confectioneries.',
+    image: 'https://cdn.magicpatterns.com/patterns/generated-images/f125d70b-32fb-4a3e-9c52-a4c9fda51bab.jpg',
+    bestSeason: 'November to April',
+  },
+];
