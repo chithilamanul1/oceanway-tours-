@@ -51,6 +51,7 @@ export default function ItinerariesManager() {
         setItineraries(itineraries.map(i => (i._id === editingId || i.id === editingId) ? updated : i));
         setEditingId(null);
         setEditForm({});
+        alert('Tour package saved successfully!');
       }
     } catch (err) {
       console.error(err);

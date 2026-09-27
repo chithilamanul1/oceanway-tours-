@@ -51,6 +51,7 @@ export default function DestinationsManager() {
         setDestinations(destinations.map(d => (d._id === editingId || d.id === editingId) ? updated : d));
         setEditingId(null);
         setEditForm({});
+        alert('Destination saved successfully!');
       }
     } catch (err) {
       console.error(err);

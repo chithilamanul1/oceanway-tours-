@@ -51,6 +51,7 @@ export default function BlogManager() {
         setPosts(posts.map(p => (p._id === editingId || p.id === editingId) ? updated : p));
         setEditingId(null);
         setEditForm({});
+        alert('Journal entry saved successfully!');
       }
     } catch (err) {
       console.error(err);
