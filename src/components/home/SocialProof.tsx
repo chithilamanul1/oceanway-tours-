@@ -13,9 +13,9 @@ export default function SocialProof() {
           
           <div className="flex items-center gap-4">
             <div className="flex -space-x-4">
-              <img src="https://i.pravatar.cc/100?img=1" alt="User" className="w-12 h-12 rounded-full border-2 border-white object-cover" />
-              <img src="https://i.pravatar.cc/100?img=2" alt="User" className="w-12 h-12 rounded-full border-2 border-white object-cover" />
-              <img src="https://i.pravatar.cc/100?img=3" alt="User" className="w-12 h-12 rounded-full border-2 border-white object-cover" />
+              <img src="/WhatsApp%20Image%202026-09-24%20at%201.23.26%20AM.jpeg" alt="Client" className="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" />
+              <img src="/WhatsApp%20Image%202026-09-24%20at%201.23.27%20AM.jpeg" alt="Client" className="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" />
+              <img src="/WhatsApp%20Image%202026-09-24%20at%201.23.28%20AM%20(1).jpeg" alt="Client" className="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm" />
               <div className="w-12 h-12 rounded-full border-2 border-white bg-sand flex items-center justify-center font-bold text-brand text-xs">
                 10k+
               </div>
@@ -29,8 +29,8 @@ export default function SocialProof() {
           <div className="w-px h-12 bg-line hidden md:block" />
 
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-[#00AF87] rounded-full flex items-center justify-center text-white">
-              <span className="font-bold font-serif text-2xl">t</span>
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md p-1.5 overflow-hidden border border-line/50">
+              <img src="/tripadvisor-logo.png" alt="TripAdvisor" className="w-full h-full object-cover" />
             </div>
             <div>
               <div className="flex gap-1 text-[#00AF87] mb-1">
@@ -38,15 +38,15 @@ export default function SocialProof() {
                   <Star key={i} size={16} fill="currentColor" />
                 ))}
               </div>
-              <p className="text-sm font-bold text-forest">4.8/5 on TripAdvisor</p>
+              <p className="text-sm font-bold text-forest">5.0/5 on TripAdvisor</p>
             </div>
           </div>
 
           <div className="w-px h-12 bg-line hidden lg:block" />
 
           <div className="flex items-center gap-4 hidden lg:flex cursor-pointer hover:opacity-80 transition-opacity" onClick={() => window.open('https://share.google/S8Qqptam62GHSUq4m', '_blank')}>
-             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md p-2">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" className="w-full h-full object-contain" />
+             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md p-2 overflow-hidden border border-line/50">
+                <img src="/google-logo.png" alt="Google" className="w-full h-full object-cover" />
             </div>
             <div>
               <div className="flex gap-1 text-[#F59E0B] mb-1">
@@ -54,7 +54,7 @@ export default function SocialProof() {
                   <Star key={i} size={16} fill="currentColor" />
                 ))}
               </div>
-              <p className="text-sm font-bold text-forest">4.9/5 Google Reviews</p>
+              <p className="text-sm font-bold text-forest">5.0/5 Google Reviews</p>
             </div>
           </div>
 
