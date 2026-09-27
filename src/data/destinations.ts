@@ -10,7 +10,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'Vibrant coastal capital where colonial history meets contemporary urban charm',
     description:
       'Colombo is Sri Lanka’s pulsating oceanfront metropolis, featuring a fascinating blend of grand colonial architecture, bustling open-air bazaars in Pettah, and cosmopolitan seaside dining along Galle Face Green.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/3a91d4f3-e4c3-4c33-ab9b-1bbaadfb6556.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.11%20AM%20(1).jpeg',
     bestSeason: 'November to April',
   },
   {
@@ -21,7 +21,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'The sacred hill country bastion surrounded by misty peaks and tea plantations',
     description:
       'Set around an idyllic peaceful lake, Kandy is the cultural heartland of Sri Lanka and home to the sacred Temple of the Sacred Tooth Relic, Royal Botanical Gardens, and traditional Kandyan dance performances.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/8cb0359e-dfc0-47ad-93d0-b1e99cf670bd.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.11%20AM.jpeg',
     bestSeason: 'December to April',
   },
   {
@@ -32,7 +32,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'Ancient sky fortress rising dramatically above emerald jungle canopies',
     description:
       'Dominated by the awe-inspiring 5th-century Lion Rock citadel, Sigiriya is an archaeological marvel of water gardens, world-famous frescoes, and breathtaking panoramic vistas over Sri Lanka’s dry zone forests.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/dd19e250-c9f2-43c1-9669-e3a2cfbedd8e.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.12%20AM%20(1).jpeg',
     bestSeason: 'January to April',
   },
   {
@@ -43,7 +43,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'Enchanting Dutch-colonial fortified town on the sun-drenched southern coast',
     description:
       'Encircled by sturdy sea-facing ramparts, the UNESCO-listed Galle Fort is a living museum filled with artisan boutiques, restored 17th-century villas, gourmet seafood eateries, and evocative ocean sunsets.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/cb3b6cb8-ff31-40c7-b69b-f853763e43dc.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.12%20AM.jpeg',
     bestSeason: 'November to April',
   },
   {
@@ -54,7 +54,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'Highland mountain haven of cascading waterfalls, scenic rails, and lush gaps',
     description:
       'Nestled high in the misty central highlands, Ella draws travelers with its iconic Nine Arches Bridge, invigorating hikes up Little Adam’s Peak, and rolling valleys carpeted in world-renowned Ceylon tea.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/e445e8fc-0b9a-4a0e-ae29-b945ec2f8d7e.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.13%20AM%20(1).jpeg',
     bestSeason: 'January to May',
   },
   {
@@ -65,7 +65,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'Premier wilderness sanctuary famed for high leopard density and wild herds',
     description:
       'Sri Lanka’s most renowned national park spans diverse ecosystems ranging from thorn forests to coastal lagoons, harboring one of the highest densities of leopards in the world alongside Asian elephants and sloth bears.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/29d0e984-c8c7-4068-92ed-88f2f6902abc.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.13%20AM.jpeg',
     bestSeason: 'February to June',
   },
   {
@@ -76,7 +76,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'Bustling coastal fishing town celebrated for golden sands and lagoon boat trails',
     description:
       'Situated conveniently near Bandaranaike International Airport, Negombo welcomes visitors with its sprawling golden beach, atmospheric Dutch canal waterways, and vibrant early morning fish markets.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/295a7f56-a405-446d-b541-c353c7eef390.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.14%20AM.jpeg',
     bestSeason: 'December to April',
   },
   {
@@ -87,7 +87,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'Pristine deep-water bay with powdery beaches, blue whales, and ancient temples',
     description:
       'Set on one of the finest natural harbors in the world, Trincomalee enchants with tranquil beaches like Nilaveli, thrilling blue whale watching excursions, and the clifftop Koneswaram Hindu temple.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/84ae94ba-ffc8-4ce7-addd-bd78c75dab92.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.15%20AM%20(1).jpeg',
     bestSeason: 'May to October',
   },
 
@@ -100,7 +100,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'Dynamic desert metropolis bridging ancient heritage with hyper-futuristic horizons',
     description:
       'The Kingdom’s capital juxtaposes mud-brick fortresses like Al Masmak and the UNESCO-listed Diriyah with soaring architectural marvels, world-class dining, and thriving cultural districts.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/710acca0-7433-4231-b9f4-1e43fc9a89e0.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.15%20AM%20(2).jpeg',
     bestSeason: 'November to March',
   },
   {
@@ -111,7 +111,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'Historic Red Sea port renowned for coral architecture and breezy coastal corniche',
     description:
       'Gateway to the holy sanctuaries, Jeddah is celebrated for the labyrinthine alleys of Al-Balad with its delicate wooden Roshan balconies, sculpture-filled seafront promenades, and world-class diving.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/fbdfe4c2-b4b6-4284-88a4-9896fd436f8c.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.15%20AM%20(3).jpeg',
     bestSeason: 'October to April',
   },
   {
@@ -122,7 +122,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'Open-air living museum carved into surreal sandstone canyons and Nabataean tombs',
     description:
       'An ancient crossroads of civilizations, AlUla showcases monumental Nabataean tombs at Hegra, mirrored concert halls, lush dates oases, and striking natural rock formations under dark starry skies.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/3520734f-97ba-4c5a-b498-325086224c14.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.15%20AM%20(4).jpeg',
     bestSeason: 'October to April',
   },
   {
@@ -133,7 +133,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'Sacred sanctuary of radiant peace, majestic courtyards, and deep spiritual legacy',
     description:
       'One of Islam’s most revered cities, Medina welcomes cultural and heritage travelers to admire its serene desert architecture, historic battle sites, date palm groves, and rich Islamic heritage museums.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/e1fa99c6-eafa-4f3f-abab-031adf7300bb.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.15%20AM.jpeg',
     bestSeason: 'November to March',
   },
 
@@ -146,7 +146,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'Cosmopolitan Gulf capital blending historic souqs with gleaming waterfront towers',
     description:
       'Manama is a vibrant island capital where traditional spices and gold stalls in Bab Al Bahrain sit alongside contemporary art galleries, Michelin-starred cuisine, and modern waterfront marinas.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/c98694b3-443a-4dee-b9f7-c09978bdfccc.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.16%20AM%20(1).jpeg',
     bestSeason: 'November to April',
   },
   {
@@ -157,7 +157,7 @@ export const destinationsSeed: Destination[] = [
     tagline: 'Heart of Bahrain’s pearling legacy with storied alleyways and restored merchant estates',
     description:
       'The former capital preserves Bahrain’s UNESCO Pearling Path, adorned with intricately restored coral stone houses, wind towers, artisan workshops, and authentic traditional halwa confectioneries.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/f125d70b-32fb-4a3e-9c52-a4c9fda51bab.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.16%20AM%20(2).jpeg',
     bestSeason: 'November to April',
   },
 ];

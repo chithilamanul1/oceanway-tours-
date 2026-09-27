@@ -12,7 +12,7 @@ export const itinerariesSeed: Itinerary[] = [
     difficulty: 'Moderate',
     price: 890,
     season: 'Nov - Apr',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/dd19e250-c9f2-43c1-9669-e3a2cfbedd8e.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.16%20AM.jpeg',
     summary:
       'Explore ancient UNESCO world heritage treasures, climb Sigiriya Rock Fortress, visit sacred Kandy, and wander the tea-clad hills of Nuwara Eliya.',
     highlights: [
@@ -101,7 +101,7 @@ export const itinerariesSeed: Itinerary[] = [
     difficulty: 'Easy',
     price: 2150,
     season: 'Dec - Apr',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/3a91d4f3-e4c3-4c33-ab9b-1bbaadfb6556.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.17%20AM%20(1).jpeg',
     summary:
       'The ultimate dual-destination romance: colonial heritage and lush highlands in Sri Lanka followed by overwater bungalow luxury in the Maldives.',
     highlights: [
@@ -212,7 +212,7 @@ export const itinerariesSeed: Itinerary[] = [
     difficulty: 'Moderate',
     price: 680,
     season: 'Feb - Jul',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/29d0e984-c8c7-4068-92ed-88f2f6902abc.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.17%20AM%20(2).jpeg',
     summary:
       'A high-octane 5-day safari expedition tracking wild leopards, herds of elephants, and endemic birds across Yala and Udawalawe national parks.',
     highlights: [
@@ -282,7 +282,7 @@ export const itinerariesSeed: Itinerary[] = [
     difficulty: 'Easy',
     price: 320,
     season: 'Year Round',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/295a7f56-a405-446d-b541-c353c7eef390.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.17%20AM.jpeg',
     summary:
       'Quick, revitalizing coastal getaway featuring lagoon kayaking, lively seafood markets, and beachside leisure just minutes from Colombo airport.',
     highlights: [
@@ -334,7 +334,7 @@ export const itinerariesSeed: Itinerary[] = [
     difficulty: 'Easy',
     price: 1250,
     season: 'Nov - Apr',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/8cb0359e-dfc0-47ad-93d0-b1e99cf670bd.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.18%20AM%20(1).jpeg',
     summary:
       'Soar above Sri Lanka’s greatest landmarks in an exclusive helicopter charter connecting Sigiriya Lion Rock, misty Kandy, and Colombo in a single majestic day.',
     highlights: [
@@ -375,7 +375,7 @@ export const itinerariesSeed: Itinerary[] = [
     difficulty: 'Moderate',
     price: 1890,
     season: 'Oct - Mar',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/710acca0-7433-4231-b9f4-1e43fc9a89e0.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.18%20AM%20(2).jpeg',
     summary:
       'The definitive journey across Saudi Arabia tracing the historic kingdom from Riyadh’s ancient mud-brick origins to AlUla’s Nabataean tombs and Jeddah’s Red Sea coast.',
     highlights: [
@@ -469,7 +469,7 @@ export const itinerariesSeed: Itinerary[] = [
     difficulty: 'Moderate',
     price: 1450,
     season: 'Oct - Apr',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/3520734f-97ba-4c5a-b498-325086224c14.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.18%20AM%20(3).jpeg',
     summary:
       'Immerse in the magic of AlUla with visits to Hegra, Ikmah inscriptions, Elephant Rock, and luxury desert glamping among soaring sandstone bluffs.',
     highlights: [
@@ -537,7 +537,7 @@ export const itinerariesSeed: Itinerary[] = [
     difficulty: 'Easy',
     price: 780,
     season: 'Nov - Mar',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/fbdfe4c2-b4b6-4284-88a4-9896fd436f8c.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.18%20AM.jpeg',
     summary:
       'Discover the maritime soul of Saudi Arabia through UNESCO-listed Al-Balad coral architecture, bustling souqs, modern waterfront art, and Red Sea cruising.',
     highlights: [
@@ -597,7 +597,7 @@ export const itinerariesSeed: Itinerary[] = [
     difficulty: 'Easy',
     price: 690,
     season: 'Nov - Apr',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/c98694b3-443a-4dee-b9f7-c09978bdfccc.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.19%20AM%20(1).jpeg',
     summary:
       'Trace the world-renowned pearling history of Bahrain across ancient forts, UNESCO merchant paths, traditional dhow shipyards, and atmospheric souqs.',
     highlights: [
@@ -657,7 +657,7 @@ export const itinerariesSeed: Itinerary[] = [
     difficulty: 'Easy',
     price: 520,
     season: 'Year Round',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/f125d70b-32fb-4a3e-9c52-a4c9fda51bab.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.19%20AM%20(2).jpeg',
     summary:
       'A fast-paced urban getaway covering Bahrain’s modern skyline, thrilling karting at the Bahrain International Circuit, and luxury marina dining.',
     highlights: [
@@ -710,7 +710,7 @@ export const itinerariesSeed: Itinerary[] = [
     difficulty: 'Easy',
     price: 1780,
     season: 'Nov - Apr',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/cb3b6cb8-ff31-40c7-b69b-f853763e43dc.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.19%20AM.jpeg',
     summary:
       'An unforgettable 8-day romantic escape featuring boutique colonial estates, private candlelit beach dining, coastal river cruises, and rejuvenating couples Ayurveda.',
     highlights: [
@@ -805,7 +805,7 @@ export const itinerariesSeed: Itinerary[] = [
     difficulty: 'Challenging',
     price: 620,
     season: 'Dec - May',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/e445e8fc-0b9a-4a0e-ae29-b945ec2f8d7e.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.20%20AM%20(1).jpeg',
     summary:
       'An invigorating trekking adventure conquering Ella Rock, Little Adam’s Peak, hidden mountain waterfalls, and the scenic railway paths of Ceylon tea country.',
     highlights: [

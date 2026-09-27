@@ -118,7 +118,7 @@ export const services: ServiceItem[] = [
     category: 'Custom Travel',
     description:
       'Comprehensive end-to-end luxury itineraries engineered around couples, families, and solo explorers with private dedicated vehicles.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/3a91d4f3-e4c3-4c33-ab9b-1bbaadfb6556.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.24%20AM%20(1).jpeg',
   },
   {
     id: 'small-group',
@@ -126,7 +126,7 @@ export const services: ServiceItem[] = [
     category: 'Group Journeys',
     description:
       'Intimate group journeys capped at 12 guests, blending high-end cultural storytelling, historic marvels, and authentic shared moments.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/710acca0-7433-4231-b9f4-1e43fc9a89e0.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.24%20AM.jpeg',
   },
   {
     id: 'air-charter',
@@ -134,7 +134,7 @@ export const services: ServiceItem[] = [
     category: 'VIP Aviation',
     description:
       'Seamless point-to-point transfers and panoramic aerial excursions over iconic heritage fortresses, tea estates, and desert peaks.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/8cb0359e-dfc0-47ad-93d0-b1e99cf670bd.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.25%20AM%20(1).jpeg',
   },
   {
     id: 'wildlife-safari',
@@ -142,7 +142,7 @@ export const services: ServiceItem[] = [
     category: 'Eco & Nature',
     description:
       'Private 4x4 leopard game drives, elephant gathering expeditions, and ethical whale-watching sails with expert naturalists.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/29d0e984-c8c7-4068-92ed-88f2f6902abc.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.25%20AM%20(2).jpeg',
   },
   {
     id: 'honeymoon-packages',
@@ -150,7 +150,7 @@ export const services: ServiceItem[] = [
     category: 'Romance',
     description:
       'Enchanting getaways combining candlelit coastal dining, private plunge pools, couples Ayurveda, and tropical island bliss.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/cb3b6cb8-ff31-40c7-b69b-f853763e43dc.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.25%20AM.jpeg',
   },
   {
     id: 'corporate-logistics',
@@ -158,7 +158,7 @@ export const services: ServiceItem[] = [
     category: 'Executive Travel',
     description:
       'Full-spectrum ground coordination, premium fleet transport, conference logistics, and executive team retreats across the Middle East & Sri Lanka.',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/c98694b3-443a-4dee-b9f7-c09978bdfccc.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.26%20AM%20(1).jpeg',
   },
 ];
 
@@ -181,7 +181,7 @@ export const testimonials: TestimonialItem[] = [
     quote:
       'OceanWay Tours orchestrated the most magical 10 days of our lives. From the scenic tea plantation bungalow to our private water villa in the Maldives, every detail was immaculate.',
     rating: 5,
-    avatar: 'https://cdn.magicpatterns.com/patterns/generated-images/ba111831-dd66-426a-909d-5ac2d603cd21.jpg',
+    avatar: '/WhatsApp%20Image%202026-09-24%20at%201.23.26%20AM.jpeg',
   },
   {
     id: 't-2',
@@ -191,7 +191,7 @@ export const testimonials: TestimonialItem[] = [
     quote:
       'Our chauffeur-guide Dinesh was outstanding with our three children. Seeing wild leopards in Yala and exploring Galle Fort without any tourist rush made this an unforgettable family vacation.',
     rating: 5,
-    avatar: 'https://cdn.magicpatterns.com/patterns/generated-images/84ae94ba-ffc8-4ce7-addd-bd78c75dab92.jpg',
+    avatar: '/WhatsApp%20Image%202026-09-24%20at%201.23.27%20AM.jpeg',
   },
   {
     id: 't-3',
@@ -201,7 +201,7 @@ export const testimonials: TestimonialItem[] = [
     quote:
       'The Hegra private tour at golden hour took my breath away. OceanWay’s local team in Saudi Arabia handled all permits seamlessly. Truly a five-star bespoke journey.',
     rating: 5,
-    avatar: 'https://cdn.magicpatterns.com/patterns/generated-images/551ccc29-2164-449a-9e0a-e56f741c7c65.jpg',
+    avatar: '/WhatsApp%20Image%202026-09-24%20at%201.23.28%20AM%20(1).jpeg',
   },
 ];
 

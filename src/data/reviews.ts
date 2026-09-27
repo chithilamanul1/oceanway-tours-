@@ -10,7 +10,7 @@ export const reviewsSeed: Review[] = [
       'We cannot praise OceanWay Tours enough! Our driver-guide Roshan was extraordinarily knowledgeable, polite, and always had cold king coconuts waiting after our climbs. Sigiriya at dawn was the highlight of our entire year.',
     rating: 5,
     platform: 'TripAdvisor',
-    avatar: 'https://cdn.magicpatterns.com/patterns/generated-images/ba111831-dd66-426a-909d-5ac2d603cd21.jpg',
+    avatar: '/WhatsApp%20Image%202026-09-24%20at%201.23.20%20AM.jpeg',
   },
   {
     id: 'rev-2',
@@ -21,7 +21,7 @@ export const reviewsSeed: Review[] = [
       'A masterclass in wildlife logistics. We saw two leopards within our first three hours in Yala Block 1, followed by a herd of over 40 wild elephants at sunset. The tented lodge hospitality was second to none.',
     rating: 5,
     platform: 'Google',
-    avatar: 'https://cdn.magicpatterns.com/patterns/generated-images/84ae94ba-ffc8-4ce7-addd-bd78c75dab92.jpg',
+    avatar: '/WhatsApp%20Image%202026-09-24%20at%201.23.21%20AM%20(1).jpeg',
   },
   {
     id: 'rev-3',
@@ -32,7 +32,7 @@ export const reviewsSeed: Review[] = [
       'The transition between the misty Ceylon tea mountains and our private overwater bungalow in the Maldives was seamless. OceanWay took care of luggage, seaplanes, and special dietary requirements flawlessly.',
     rating: 5,
     platform: 'Direct',
-    avatar: 'https://cdn.magicpatterns.com/patterns/generated-images/551ccc29-2164-449a-9e0a-e56f741c7c65.jpg',
+    avatar: '/WhatsApp%20Image%202026-09-24%20at%201.23.21%20AM.jpeg',
   },
   {
     id: 'rev-4',
@@ -43,7 +43,7 @@ export const reviewsSeed: Review[] = [
       'Fascinating deep dive into the pearling trails of Muharraq. Our guide was passionate about local architecture and introduced us to traditional sweet shops and artisans we would never have discovered alone.',
     rating: 5,
     platform: 'TripAdvisor',
-    avatar: 'https://cdn.magicpatterns.com/patterns/generated-images/e1fa99c6-eafa-4f3f-abab-031adf7300bb.jpg',
+    avatar: '/WhatsApp%20Image%202026-09-24%20at%201.23.22%20AM.jpeg',
   },
   {
     id: 'rev-5',
@@ -54,7 +54,7 @@ export const reviewsSeed: Review[] = [
       'Saudi Arabia exceeded every expectation. AlUla is truly awe-inspiring, and the local Rawis provided deep context on the Nabataean kingdom. OceanWay made visiting this emerging destination remarkably smooth and enjoyable.',
     rating: 4,
     platform: 'Google',
-    avatar: 'https://cdn.magicpatterns.com/patterns/generated-images/710acca0-7433-4231-b9f4-1e43fc9a89e0.jpg',
+    avatar: '/WhatsApp%20Image%202026-09-24%20at%201.23.23%20AM%20(1).jpeg',
   },
   {
     id: 'rev-6',
@@ -65,6 +65,6 @@ export const reviewsSeed: Review[] = [
       'OceanWay arranged the dreamiest honeymoon for us along the Galle and Bentota coast. Candlelit beach dinners, private catamaran sailing, and exquisite boutique villas. We will certainly travel with them again!',
     rating: 5,
     platform: 'Direct',
-    avatar: 'https://cdn.magicpatterns.com/patterns/generated-images/cb3b6cb8-ff31-40c7-b69b-f853763e43dc.jpg',
+    avatar: '/WhatsApp%20Image%202026-09-24%20at%201.23.23%20AM.jpeg',
   },
 ];

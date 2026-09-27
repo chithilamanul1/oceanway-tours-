@@ -14,7 +14,7 @@ export const blogPostsSeed: BlogPost[] = [
     author: 'Chathura Fernando',
     date: '2025-02-12',
     category: 'Sri Lanka',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/295a7f56-a405-446d-b541-c353c7eef390.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.00.01%20AM.jpeg',
     readTime: 4,
   },
   {
@@ -30,7 +30,7 @@ export const blogPostsSeed: BlogPost[] = [
     author: 'Captain Priyantha Silva',
     date: '2025-01-28',
     category: 'Sri Lanka',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/8cb0359e-dfc0-47ad-93d0-b1e99cf670bd.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.18.50%20AM.jpeg',
     readTime: 5,
   },
   {
@@ -46,7 +46,7 @@ export const blogPostsSeed: BlogPost[] = [
     author: 'Dinesh Wickramasinghe',
     date: '2025-02-04',
     category: 'Sri Lanka',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/29d0e984-c8c7-4068-92ed-88f2f6902abc.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.18.51%20AM.jpeg',
     readTime: 6,
   },
   {
@@ -62,7 +62,7 @@ export const blogPostsSeed: BlogPost[] = [
     author: 'Fatima Al-Mansoor',
     date: '2025-01-19',
     category: 'Saudi Arabia',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/3520734f-97ba-4c5a-b498-325086224c14.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.18.54%20AM.jpeg',
     readTime: 5,
   },
   {
@@ -78,7 +78,7 @@ export const blogPostsSeed: BlogPost[] = [
     author: 'Khalid Al-Sabah',
     date: '2025-02-18',
     category: 'Bahrain',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/c98694b3-443a-4dee-b9f7-c09978bdfccc.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.18.55%20AM.jpeg',
     readTime: 5,
   },
   {
@@ -94,7 +94,7 @@ export const blogPostsSeed: BlogPost[] = [
     author: 'OceanWay Editorial Team',
     date: '2025-01-05',
     category: 'Travel Planning',
-    image: 'https://cdn.magicpatterns.com/patterns/generated-images/551ccc29-2164-449a-9e0a-e56f741c7c65.jpg',
+    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.10%20AM.jpeg',
     readTime: 4,
   },
 ];

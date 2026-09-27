@@ -9,7 +9,7 @@ export default function QuoteCta() {
         <div className="bg-brand rounded-[32px] overflow-hidden relative">
           <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" 
+              src="/WhatsApp%20Image%202026-09-24%20at%201.23.28%20AM%20(2).jpeg" 
               alt="Beach background" 
               className="w-full h-full object-cover opacity-20"
             />

@@ -35,7 +35,7 @@ export default function WhyChoose() {
           <div className="relative">
             <div className="absolute inset-0 bg-brand rounded-[28px] translate-x-6 translate-y-6" />
             <img 
-              src="https://images.unsplash.com/photo-1533587851505-d119e13bf0eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" 
+              src="/WhatsApp%20Image%202026-09-24%20at%201.23.28%20AM.jpeg" 
               alt="Travelers enjoying their time" 
               className="relative z-10 rounded-[28px] w-full h-[500px] object-cover shadow-2xl"
             />
