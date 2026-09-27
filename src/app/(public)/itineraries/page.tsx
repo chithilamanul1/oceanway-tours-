@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { itinerariesSeed } from '@/data/itineraries';
 import { destinationsSeed } from '@/data/destinations';
 import { ItinerariesClient } from './ItinerariesClient';
-import { PageHero } from '@/components/ui/PageHero';
+import PageHero from '@/components/ui/PageHero';
 
 export const metadata: Metadata = {
   title: 'Holidays & Tours',

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { blogPostsSeed } from '@/data/blogPosts';
 import { JournalClient } from './JournalClient';
-import { PageHero } from '@/components/ui/PageHero';
+import PageHero from '@/components/ui/PageHero';
 
 export const metadata: Metadata = {
   title: 'Travel Blog',
