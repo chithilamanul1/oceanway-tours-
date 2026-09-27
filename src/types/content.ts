@@ -38,6 +38,7 @@ export interface DayPlan {
 
 /* ── Itinerary ── */
 export interface Itinerary {
+  _id?: string;
   id: string;
   title: string;
   destinationId: string;
