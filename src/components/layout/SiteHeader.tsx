@@ -49,7 +49,7 @@ export default function SiteHeader() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex-shrink-0">
-            <img src={logoUrl} alt="OceanWay Tours" className="h-12 w-auto" />
+            <img src={logoUrl} alt="OceanWay Tours" className="h-16 w-auto" />
           </Link>
 
           {/* Desktop Nav */}

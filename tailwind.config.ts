@@ -19,8 +19,9 @@ const config: Config = {
         line: '#E5E7EB',
       },
       fontFamily: {
-        display: ['Poppins', 'sans-serif'],
-        body: ['Poppins', 'sans-serif'],
+        display: ['var(--font-poppins)', 'sans-serif'],
+        body: ['var(--font-poppins)', 'sans-serif'],
+        viney: ['var(--font-viney)', 'cursive'],
       },
     },
   },
