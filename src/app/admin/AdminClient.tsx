@@ -75,7 +75,7 @@ export function AdminClient({ initialStats }: AdminClientProps) {
             onClick={() => { setActiveTab('enquiries'); setMobileMenuOpen(false); }} 
             className={`w-full flex items-center gap-3 px-4 py-3 rounded text-sm font-medium transition-colors ${activeTab === 'enquiries' ? 'bg-brand text-white' : 'text-white/70 hover:bg-white/10 hover:text-white'}`}
           >
-            <Mail size={18} /> Client Enquiries
+            <Mail size={18} /> CRM / Enquiries
           </button>
         </nav>
         <div className="p-4 border-t border-white/10">
