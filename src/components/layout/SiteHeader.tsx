@@ -37,7 +37,7 @@ export default function SiteHeader() {
               <Mail size={16} />
               {contactInfo.email}
             </a>
-            <a href={`tel:${contactInfo.phone}`} className="flex items-center gap-2 hover:text-mint transition-colors">
+            <a href={`tel:${contactInfo.phone.split('/')[0].trim()}`} className="flex items-center gap-2 hover:text-mint transition-colors">
               <Phone size={16} />
               {contactInfo.phone}
             </a>

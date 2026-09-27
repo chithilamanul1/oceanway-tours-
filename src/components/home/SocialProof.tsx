@@ -1,6 +1,9 @@
+'use client';
+
 import React from 'react';
 import { Star } from 'lucide-react';
 import { stats } from '@/data/siteContent';
+import ReviewFilter from '@/components/ui/ReviewFilter';
 
 export default function SocialProof() {
   return (
@@ -41,7 +44,7 @@ export default function SocialProof() {
 
           <div className="w-px h-12 bg-line hidden lg:block" />
 
-          <div className="flex items-center gap-4 hidden lg:flex">
+          <div className="flex items-center gap-4 hidden lg:flex cursor-pointer hover:opacity-80 transition-opacity" onClick={() => window.open('https://share.google/S8Qqptam62GHSUq4m', '_blank')}>
              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md p-2">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" className="w-full h-full object-contain" />
             </div>
@@ -53,6 +56,12 @@ export default function SocialProof() {
               </div>
               <p className="text-sm font-bold text-forest">4.9/5 Google Reviews</p>
             </div>
+          </div>
+
+          <div className="w-px h-12 bg-line hidden xl:block" />
+
+          <div className="hidden xl:block">
+            <ReviewFilter />
           </div>
 
         </div>

@@ -1,8 +1,8 @@
 export const contactInfo = {
-  email: 'inquiries@oceanwaytours.com',
-  phone: '+94 00 000 0000',
-  whatsapp: '94000000000',
-  address: 'Seeduwa, Sri Lanka',
+  email: 'hello@oceanwaytours.com',
+  phone: '+94 76 363 4022 / +966 53 781 3155',
+  whatsapp: '94763634022',
+  address: 'Oceanway Tours (Pvt) Ltd, Negombo, Sri Lanka',
   hours: 'Available 24/7',
 };
 

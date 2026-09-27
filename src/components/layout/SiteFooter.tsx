@@ -60,7 +60,7 @@ export default function SiteFooter() {
               </li>
               <li className="flex gap-3 text-mist/80">
                 <Phone size={20} className="text-brand shrink-0" />
-                <a href={`tel:${contactInfo.phone}`} className="hover:text-white transition-colors">{contactInfo.phone}</a>
+                <a href={`tel:${contactInfo.phone.split('/')[0].trim()}`} className="hover:text-white transition-colors">{contactInfo.phone}</a>
               </li>
               <li className="flex gap-3 text-mist/80">
                 <Mail size={20} className="text-brand shrink-0" />
