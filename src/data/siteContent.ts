@@ -118,7 +118,7 @@ export const services: ServiceItem[] = [
     category: 'Custom Travel',
     description:
       'Comprehensive end-to-end luxury itineraries engineered around couples, families, and solo explorers with private dedicated vehicles.',
-    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.24%20AM%20(1).jpeg',
+    image: 'https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/b2/69/d0/b2/a9/v1_E10/E10DQNR.jpg?w=800&cf_fit=scale-down&q=85&format=auto&s=58f1f17446a6fcbbd95ca82e5f540bf646b4ac432d06a4197225631229734919',
   },
   {
     id: 'small-group',
@@ -126,7 +126,7 @@ export const services: ServiceItem[] = [
     category: 'Group Journeys',
     description:
       'Intimate group journeys capped at 12 guests, blending high-end cultural storytelling, historic marvels, and authentic shared moments.',
-    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.24%20AM.jpeg',
+    image: 'https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/c6/37/ec/a9/55/v1_E10/E106HMEY.jpg?w=800&cf_fit=scale-down&q=85&format=auto&s=2c06747f7c93c62dc63fd99faea6fe577360e966996b3597604431e78a942120',
   },
   {
     id: 'air-charter',
@@ -134,7 +134,7 @@ export const services: ServiceItem[] = [
     category: 'VIP Aviation',
     description:
       'Seamless point-to-point transfers and panoramic aerial excursions over iconic heritage fortresses, tea estates, and desert peaks.',
-    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.25%20AM%20(1).jpeg',
+    image: 'https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/a0/36/50/25/9e/v1_E10/E10599W3.jpg?w=800&cf_fit=scale-down&q=85&format=auto&s=7818b1e73ebee307580ae46346855e4ac3941c349c5a4e4ee423aac8694dc4d7',
   },
   {
     id: 'wildlife-safari',
@@ -142,7 +142,7 @@ export const services: ServiceItem[] = [
     category: 'Eco & Nature',
     description:
       'Private 4x4 leopard game drives, elephant gathering expeditions, and ethical whale-watching sails with expert naturalists.',
-    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.25%20AM%20(2).jpeg',
+    image: 'https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/5c/d7/ac/bb/2c/v1_E10/E108W5WR.jpg?w=800&cf_fit=scale-down&q=85&format=auto&s=d5a28ba8b0dd01ec0d12aac452a25d1ba6ac7f5a29968b7384b5e4231233a584',
   },
   {
     id: 'honeymoon-packages',
@@ -150,7 +150,7 @@ export const services: ServiceItem[] = [
     category: 'Romance',
     description:
       'Enchanting getaways combining candlelit coastal dining, private plunge pools, couples Ayurveda, and tropical island bliss.',
-    image: '/WhatsApp%20Image%202026-09-24%20at%201.23.25%20AM.jpeg',
+    image: 'https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/82/a8/bb/5f/37/v1_E11/E118GID6.jpg?w=800&cf_fit=scale-down&q=85&format=auto&s=d8527ad520a7b82d89b6e41af1e2fbccedf3a3a5334471b9fca8927e65cac3e7',
   },
   {
     id: 'corporate-logistics',
