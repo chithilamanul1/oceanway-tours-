@@ -16,9 +16,34 @@ import { stats } from '@/data/siteContent';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
-export default function Home() {
-  const itineraries = itinerariesSeed;
-  const destinations = destinationsSeed;
+import { connectDB } from '@/lib/mongodb';
+import { Itinerary as ItineraryModel, Destination as DestinationModel } from '@/lib/models';
+
+export const revalidate = 60; // Revalidate every 60 seconds
+
+export default async function Home() {
+  let itineraries = itinerariesSeed;
+  let destinations = destinationsSeed;
+
+  try {
+    await connectDB();
+    const dbItineraries = await ItineraryModel.find().lean();
+    const dbDestinations = await DestinationModel.find().lean();
+    
+    if (dbItineraries.length > 0) {
+      itineraries = JSON.parse(JSON.stringify(dbItineraries));
+    } else {
+      await ItineraryModel.insertMany(itinerariesSeed);
+    }
+
+    if (dbDestinations.length > 0) {
+      destinations = JSON.parse(JSON.stringify(dbDestinations));
+    } else {
+      await DestinationModel.insertMany(destinationsSeed);
+    }
+  } catch (error) {
+    console.error('Failed to connect to MongoDB, using seed data.', error);
+  }
 
   return (
     <>

@@ -8,7 +8,26 @@ export const metadata: Metadata = {
   description: 'Destination guides, planning advice, and inspiration from the OceanWay Tours team.',
 };
 
-export default function JournalPage() {
+import { connectDB } from '@/lib/mongodb';
+import { BlogPost as BlogPostModel } from '@/lib/models';
+
+export const revalidate = 60;
+
+export default async function JournalPage() {
+  let posts = blogPostsSeed;
+
+  try {
+    await connectDB();
+    const dbPosts = await BlogPostModel.find().lean();
+    if (dbPosts.length > 0) {
+      posts = JSON.parse(JSON.stringify(dbPosts));
+    } else {
+      await BlogPostModel.insertMany(blogPostsSeed);
+    }
+  } catch (error) {
+    console.error('MongoDB fetch failed, using seed data.', error);
+  }
+
   return (
     <>
       <PageHero
@@ -17,7 +36,7 @@ export default function JournalPage() {
         description="Destination guides, planning advice, and inspiration from the OceanWay Tours team—from Sri Lanka adventures to Saudi Arabia heritage tours and Bahrain city breaks."
         image="https://cdn.magicpatterns.com/patterns/generated-images/e1fa99c6-eafa-4f3f-abab-031adf7300bb.jpg"
       />
-      <JournalClient posts={blogPostsSeed} />
+      <JournalClient posts={posts} />
     </>
   );
 }
