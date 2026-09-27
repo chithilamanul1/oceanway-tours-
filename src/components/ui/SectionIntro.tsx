@@ -18,8 +18,9 @@ export default function SectionIntro({ eyebrow, title, children, align = 'center
           {eyebrow}
         </span>
       )}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display text-forest mb-6">
-        <span className="text-brand">{firstWord}</span> {rest}
+      <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold font-display text-forest mb-6 flex flex-wrap items-baseline gap-2 ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
+        <span className="text-brand font-viney font-normal capitalize text-[1.3em] leading-none" style={{ letterSpacing: '0' }}>{firstWord}</span> 
+        <span>{rest}</span>
       </h2>
       {children && (
         <div className="text-forest/70 text-lg leading-relaxed">
