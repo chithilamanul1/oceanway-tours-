@@ -15,6 +15,7 @@ export type Difficulty = 'Easy' | 'Moderate' | 'Challenging';
 
 /* ── Destination ── */
 export interface Destination {
+  _id?: string;
   id: string;
   name: string;
   region: string;
@@ -58,6 +59,7 @@ export interface Itinerary {
 
 /* ── Blog Post ── */
 export interface BlogPost {
+  _id?: string;
   id: string;
   title: string;
   excerpt: string;
