@@ -6,7 +6,7 @@ export const contactInfo = {
   hours: 'Available 24/7',
 };
 
-export const logoUrl = 'https://cdn.magicpatterns.com/uploads/ubYXeHwWAnuJmCZkRviSrc/logo.png';
+export const logoUrl = '/logo.png';
 
 export interface HowItWorksStep {
   step: number;
