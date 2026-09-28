@@ -19,10 +19,16 @@ export default async function JournalPage() {
   try {
     await connectDB();
     const dbPosts = await BlogPostModel.find().lean();
-    if (dbPosts.length > 0) {
-      posts = JSON.parse(JSON.stringify(dbPosts));
-    } else {
+    if (dbPosts.length > 0 && dbPosts.length < 10) {
+      // Force sync: drop old seed and insert new WP scraped posts
+      await BlogPostModel.deleteMany({});
       await BlogPostModel.insertMany(blogPostsSeed);
+      posts = blogPostsSeed;
+    } else if (dbPosts.length === 0) {
+      await BlogPostModel.insertMany(blogPostsSeed);
+      posts = blogPostsSeed;
+    } else {
+      posts = JSON.parse(JSON.stringify(dbPosts));
     }
   } catch (error) {
     console.error('MongoDB fetch failed, using seed data.', error);
