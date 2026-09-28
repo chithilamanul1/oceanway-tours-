@@ -24,7 +24,7 @@ export default async function ItinerariesPage() {
     const dbDestinations = await DestinationModel.find().lean();
     
     // Force sync new itineraries to database if they haven't been added
-    if (dbItineraries.length < 16) {
+    if (dbItineraries.length < 19) {
       await ItineraryModel.deleteMany({});
       await ItineraryModel.insertMany(itinerariesSeed);
       itineraries = itinerariesSeed;
