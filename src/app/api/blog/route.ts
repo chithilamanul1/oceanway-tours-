@@ -1,16 +1,6 @@
 import { NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
-import mongoose from 'mongoose';
-
-const blogPostSchema = new mongoose.Schema({
-  id: String,
-  title: String, excerpt: String, content: [String],
-  author: String, date: String, category: String,
-  image: String, readTime: Number,
-  seoTitle: String, seoDescription: String,
-}, { timestamps: true });
-
-const BlogPost = mongoose.models.BlogPost || mongoose.model('BlogPost', blogPostSchema);
+import { BlogPost } from '@/lib/models';
 
 export async function GET() {
   try {

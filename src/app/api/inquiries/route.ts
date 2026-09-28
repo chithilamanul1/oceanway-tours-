@@ -1,24 +1,9 @@
 import { NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
-import mongoose from 'mongoose';
+import { ContactMessage } from '@/lib/models';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-const contactMessageSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  email: { type: String, required: true },
-  phone: String,
-  travelDates: String,
-  travellers: String,
-  interest: String,
-  message: { type: String, required: true },
-  budget: String,
-  read: { type: Boolean, default: false },
-  funnelStep: { type: Number, default: 1 },
-}, { timestamps: true });
-
-const ContactMessage = mongoose.models.ContactMessage || mongoose.model('ContactMessage', contactMessageSchema);
 
 export async function GET() {
   try {

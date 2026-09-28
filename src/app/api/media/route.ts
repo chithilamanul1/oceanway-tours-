@@ -1,16 +1,6 @@
 import { NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
-import mongoose from 'mongoose';
-
-// This stores image URLs that have been added to the media library
-const mediaItemSchema = new mongoose.Schema({
-  url: { type: String, required: true },
-  name: String,
-  tags: [String],
-  uploadedAt: { type: Date, default: Date.now },
-}, { timestamps: true });
-
-const MediaItem = mongoose.models.MediaItem || mongoose.model('MediaItem', mediaItemSchema);
+import { MediaItem } from '@/lib/models';
 
 export async function GET() {
   try {

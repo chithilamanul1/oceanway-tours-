@@ -44,3 +44,18 @@ const mediaItemSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 export const MediaItem = mongoose.models.MediaItem || mongoose.model('MediaItem', mediaItemSchema);
+
+const contactMessageSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  phone: String,
+  travelDates: String,
+  travellers: String,
+  interest: String,
+  message: { type: String, required: true },
+  budget: String,
+  read: { type: Boolean, default: false },
+  funnelStep: { type: Number, default: 1 },
+}, { timestamps: true });
+
+export const ContactMessage = mongoose.models.ContactMessage || mongoose.model('ContactMessage', contactMessageSchema);

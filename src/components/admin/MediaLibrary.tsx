@@ -88,12 +88,60 @@ export default function MediaLibrary() {
           <h2 className="text-2xl font-display text-forest mb-1">Media Library</h2>
           <p className="text-sm text-charcoal/70">{items.length} images stored. Click an image to copy its URL.</p>
         </div>
-        <button
-          onClick={() => setAdding(!adding)}
-          className="flex items-center gap-2 bg-brand text-white px-4 py-2 rounded font-medium hover:bg-forest transition-colors text-sm"
-        >
-          <Plus size={16} /> Add Image URL
-        </button>
+        <div className="flex gap-2">
+          <label className="flex items-center gap-2 bg-brand text-white px-4 py-2 rounded font-medium hover:bg-forest transition-colors text-sm cursor-pointer">
+            <Plus size={16} /> Upload Image
+            <input 
+              type="file" 
+              accept="image/*" 
+              className="hidden" 
+              onChange={async (e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                
+                // Check size (max 2MB for base64 storage)
+                if (file.size > 2 * 1024 * 1024) {
+                  alert('File is too large. Please upload an image under 2MB.');
+                  return;
+                }
+
+                setSaving(true);
+                const reader = new FileReader();
+                reader.onloadend = async () => {
+                  const base64String = reader.result as string;
+                  try {
+                    const res = await fetch('/api/media', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        url: base64String,
+                        name: file.name,
+                        tags: ['uploaded']
+                      })
+                    });
+                    if (res.ok) {
+                      const item = await res.json();
+                      setItems([item, ...items]);
+                    } else {
+                      alert('Failed to upload image.');
+                    }
+                  } catch (err) {
+                    console.error(err);
+                  } finally {
+                    setSaving(false);
+                  }
+                };
+                reader.readAsDataURL(file);
+              }}
+            />
+          </label>
+          <button
+            onClick={() => setAdding(!adding)}
+            className="flex items-center gap-2 border border-line text-forest px-4 py-2 rounded font-medium hover:bg-mist transition-colors text-sm"
+          >
+            <Plus size={16} /> Add via URL
+          </button>
+        </div>
       </div>
 
       {/* Add Form */}

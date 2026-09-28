@@ -1,24 +1,6 @@
 import { NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
-import mongoose from 'mongoose';
-
-const itinerarySchema = new mongoose.Schema({
-  id: String,
-  title: String, destinationId: String, destinationName: String,
-  duration: Number, groupSize: String, difficulty: String, price: Number,
-  season: String, image: String, summary: String,
-  highlights: [String], tier: String, theme: String,
-  inclusions: [String], exclusions: [String],
-  seoTitle: String, seoDescription: String,
-  dayPlans: [{
-    day: Number, title: String, description: String,
-    activities: [String], accommodation: String,
-    meals: { breakfast: Boolean, lunch: Boolean, dinner: Boolean },
-    transferTime: String
-  }]
-}, { timestamps: true });
-
-const Itinerary = mongoose.models.Itinerary || mongoose.model('Itinerary', itinerarySchema);
+import { Itinerary } from '@/lib/models';
 
 export async function GET(_req: Request, { params }: { params: { id: string } }) {
   try {
