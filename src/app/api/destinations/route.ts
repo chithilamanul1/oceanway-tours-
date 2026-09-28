@@ -16,9 +16,14 @@ export async function POST(request: Request) {
   try {
     await connectDB();
     const body = await request.json();
+    
+    if (!body.id && body.name) {
+      body.id = 'dest-' + body.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
+
     const destination = await Destination.create(body);
     return NextResponse.json(destination, { status: 201 });
-  } catch {
-    return NextResponse.json({ error: 'Failed to create destination' }, { status: 500 });
+  } catch (error: any) {
+    return NextResponse.json({ error: 'Failed to create destination', message: error.message }, { status: 500 });
   }
 }

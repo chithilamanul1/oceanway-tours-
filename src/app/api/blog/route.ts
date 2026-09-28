@@ -16,9 +16,14 @@ export async function POST(request: Request) {
   try {
     await connectDB();
     const body = await request.json();
+    
+    if (!body.id && body.title) {
+      body.id = body.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
+
     const post = await BlogPost.create(body);
     return NextResponse.json(post, { status: 201 });
-  } catch {
-    return NextResponse.json({ error: 'Failed to create blog post' }, { status: 500 });
+  } catch (error: any) {
+    return NextResponse.json({ error: 'Failed to create blog post', message: error.message }, { status: 500 });
   }
 }

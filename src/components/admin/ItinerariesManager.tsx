@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useEffect, useState, useCallback } from 'react';
 import {
@@ -270,7 +270,7 @@ export default function ItinerariesManager() {
         goBack();
       } else {
         const err = await res.json().catch(() => ({}));
-        push((err as { message?: string }).message ?? 'Save failed', 'error');
+        push(err.message || err.error || 'Save failed', 'error');
       }
     } catch {
       push('Network error saving itinerary', 'error');
