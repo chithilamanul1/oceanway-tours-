@@ -22,7 +22,16 @@ export default async function ItinerariesPage() {
     await connectDB();
     const dbItineraries = await ItineraryModel.find().lean();
     const dbDestinations = await DestinationModel.find().lean();
-    if (dbItineraries.length > 0) itineraries = JSON.parse(JSON.stringify(dbItineraries));
+    
+    // Force sync new itineraries to database if they haven't been added
+    if (dbItineraries.length < 16) {
+      await ItineraryModel.deleteMany({});
+      await ItineraryModel.insertMany(itinerariesSeed);
+      itineraries = itinerariesSeed;
+    } else {
+      itineraries = JSON.parse(JSON.stringify(dbItineraries));
+    }
+    
     if (dbDestinations.length > 0) destinations = JSON.parse(JSON.stringify(dbDestinations));
   } catch (error) {
     console.error('MongoDB fetch failed, using seed data.', error);
