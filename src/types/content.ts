@@ -55,6 +55,10 @@ export interface Itinerary {
   tier: TourTier;
   theme: TourTheme;
   dayPlans: DayPlan[];
+  inclusions?: string[];
+  exclusions?: string[];
+  seoTitle?: string;
+  seoDescription?: string;
 }
 
 /* ── Blog Post ── */
@@ -69,6 +73,8 @@ export interface BlogPost {
   category: string;
   image: string;
   readTime: number;
+  seoTitle?: string;
+  seoDescription?: string;
 }
 
 /* ── Contact / Inquiry ── */
