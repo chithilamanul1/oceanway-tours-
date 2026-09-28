@@ -3,9 +3,11 @@ import { connectDB } from '@/lib/mongodb';
 import mongoose from 'mongoose';
 
 const blogPostSchema = new mongoose.Schema({
+  id: String,
   title: String, excerpt: String, content: [String],
   author: String, date: String, category: String,
   image: String, readTime: Number,
+  seoTitle: String, seoDescription: String,
 }, { timestamps: true });
 
 const BlogPost = mongoose.models.BlogPost || mongoose.model('BlogPost', blogPostSchema);
@@ -13,7 +15,7 @@ const BlogPost = mongoose.models.BlogPost || mongoose.model('BlogPost', blogPost
 export async function GET() {
   try {
     await connectDB();
-    const posts = await BlogPost.find().sort({ date: -1 }).lean();
+    const posts = await BlogPost.find().sort({ createdAt: -1 }).lean();
     return NextResponse.json(posts);
   } catch {
     return NextResponse.json({ error: 'Failed to fetch blog posts' }, { status: 500 });

@@ -3,9 +3,11 @@ import { connectDB } from '@/lib/mongodb';
 import mongoose from 'mongoose';
 
 const blogPostSchema = new mongoose.Schema({
+  id: String,
   title: String, excerpt: String, content: [String],
   author: String, date: String, category: String,
   image: String, readTime: Number,
+  seoTitle: String, seoDescription: String,
 }, { timestamps: true });
 
 const BlogPost = mongoose.models.BlogPost || mongoose.model('BlogPost', blogPostSchema);
@@ -17,7 +19,7 @@ export async function GET(_req: Request, { params }: { params: { id: string } })
     if (!post) return NextResponse.json({ error: 'Not found' }, { status: 404 });
     return NextResponse.json(post);
   } catch {
-    return NextResponse.json({ error: 'Failed to fetch post' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to fetch blog post' }, { status: 500 });
   }
 }
 
@@ -29,7 +31,7 @@ export async function PUT(request: Request, { params }: { params: { id: string }
     if (!post) return NextResponse.json({ error: 'Not found' }, { status: 404 });
     return NextResponse.json(post);
   } catch {
-    return NextResponse.json({ error: 'Failed to update' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to update blog post' }, { status: 500 });
   }
 }
 
@@ -39,6 +41,6 @@ export async function DELETE(_req: Request, { params }: { params: { id: string }
     await BlogPost.findByIdAndDelete(params.id);
     return NextResponse.json({ success: true });
   } catch {
-    return NextResponse.json({ error: 'Failed to delete' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to delete blog post' }, { status: 500 });
   }
 }

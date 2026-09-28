@@ -3,8 +3,11 @@ import { connectDB } from '@/lib/mongodb';
 import mongoose from 'mongoose';
 
 const destinationSchema = new mongoose.Schema({
+  id: String,
   name: String, region: String, tag: String, tagline: String,
   description: String, image: String, bestSeason: String,
+  gallery: [String], featured: Boolean,
+  seoTitle: String, seoDescription: String,
 }, { timestamps: true });
 
 const Destination = mongoose.models.Destination || mongoose.model('Destination', destinationSchema);

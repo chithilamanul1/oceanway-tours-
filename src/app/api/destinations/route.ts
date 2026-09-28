@@ -2,15 +2,12 @@ import { NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import mongoose from 'mongoose';
 
-/* ── Schema (inline to avoid import-order issues in route handlers) ── */
 const destinationSchema = new mongoose.Schema({
-  name: String,
-  region: String,
-  tag: String,
-  tagline: String,
-  description: String,
-  image: String,
-  bestSeason: String,
+  id: String,
+  name: String, region: String, tag: String, tagline: String,
+  description: String, image: String, bestSeason: String,
+  gallery: [String], featured: Boolean,
+  seoTitle: String, seoDescription: String,
 }, { timestamps: true });
 
 const Destination = mongoose.models.Destination || mongoose.model('Destination', destinationSchema);
