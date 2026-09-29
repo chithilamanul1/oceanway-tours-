@@ -3,6 +3,7 @@ import { connectDB } from '@/lib/mongodb';
 import { BlogPost, Itinerary } from '@/lib/models';
 import { blogPostsSeed } from '@/data/blogPosts';
 import { itinerariesSeed } from '@/data/itineraries';
+import { extraItineraries } from '@/data/extraItineraries';
 
 export async function GET() {
     try {
@@ -11,7 +12,7 @@ export async function GET() {
         await BlogPost.insertMany(blogPostsSeed);
         
         await Itinerary.deleteMany({});
-        await Itinerary.insertMany(itinerariesSeed);
+        await Itinerary.insertMany([...itinerariesSeed, ...extraItineraries]);
         
         return NextResponse.json({ success: true, message: 'Synced clean DB' });
     } catch (e: any) {
