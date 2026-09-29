@@ -9,7 +9,17 @@ export function formatPrice(price: number): string {
 }
 
 export function formatDate(dateString: string): string {
-  return new Intl.DateTimeFormat('en', { month: 'long', day: 'numeric', year: 'numeric' }).format(
-    new Date(`${dateString}T12:00:00`)
-  );
+  if (!dateString) return '';
+  
+  // If it already looks like a formatted date (contains letters + year), return as-is
+  // This handles dates like "September 18, 2026" from the WordPress scraper
+  if (/[a-zA-Z]/.test(dateString) && /\d{4}/.test(dateString)) {
+    return dateString;
+  }
+
+  // Otherwise parse as ISO date (YYYY-MM-DD)
+  const d = new Date(`${dateString}T12:00:00`);
+  if (isNaN(d.getTime())) return dateString; // fallback: return as-is if still invalid
+
+  return new Intl.DateTimeFormat('en', { month: 'long', day: 'numeric', year: 'numeric' }).format(d);
 }
