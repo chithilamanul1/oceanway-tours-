@@ -7,8 +7,9 @@ export async function GET() {
     await connectDB();
     const itineraries = await Itinerary.find().lean();
     return NextResponse.json(itineraries);
-  } catch {
-    return NextResponse.json({ error: 'Failed to fetch itineraries' }, { status: 500 });
+  } catch (error: any) {
+    console.error('API Error in GET /api/itineraries:', error);
+    return NextResponse.json({ error: 'Failed to fetch itineraries', details: error?.message || String(error) }, { status: 500 });
   }
 }
 

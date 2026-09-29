@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+﻿import { NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { BlogPost } from '@/lib/models';
 
@@ -7,8 +7,9 @@ export async function GET() {
     await connectDB();
     const posts = await BlogPost.find().sort({ createdAt: -1 }).lean();
     return NextResponse.json(posts);
-  } catch {
-    return NextResponse.json({ error: 'Failed to fetch blog posts' }, { status: 500 });
+  } catch (error: any) {
+    console.error('API Error:', error);
+    return NextResponse.json({ error: 'Failed to fetch blog posts', details: error?.message || String(error) }, { status: 500 });
   }
 }
 
@@ -27,3 +28,4 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Failed to create blog post', message: error.message }, { status: 500 });
   }
 }
+
