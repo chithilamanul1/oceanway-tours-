@@ -71,8 +71,9 @@ export default function SiteFooter() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-mist/60 text-sm">
-            &copy; 2026 OceanWay Tours. All rights reserved.
+          <p className="text-mist/60 text-sm text-center md:text-left">
+            &copy; 2026 OceanWay Tours. All rights reserved.<br className="md:hidden" />
+            <span className="hidden md:inline"> | </span>Made by <a href="https://seranex.lk" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline decoration-white/30 underline-offset-4">Seranex.lk</a> with love by Chithila Manul.
           </p>
           <div className="flex gap-6 text-sm">
             <Link href="/privacy" className="text-mist/60 hover:text-white transition-colors">Privacy Policy</Link>
