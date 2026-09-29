@@ -9,9 +9,14 @@ import type { Metadata } from 'next';
 export const revalidate = 60; // ISR every 60s
 
 export async function generateStaticParams() {
-  await connectDB();
-  const items = (await Itinerary.find({}, 'id').lean()) as any[];
-  return items.map((i: any) => ({ id: i.id }));
+  try {
+    await connectDB();
+    const items = (await Itinerary.find({}, 'id').lean()) as any[];
+    return items.map((i: any) => ({ id: i.id }));
+  } catch (error) {
+    console.warn('Skipping static generation due to DB error');
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {

@@ -9,9 +9,14 @@ import type { Metadata } from 'next';
 export const revalidate = 60; // ISR: revalidate every minute
 
 export async function generateStaticParams() {
-  await connectDB();
-  const posts = (await BlogPost.find({}, 'id').lean()) as any[];
-  return posts.map((p: any) => ({ id: p.id }));
+  try {
+    await connectDB();
+    const posts = (await BlogPost.find({}, 'id').lean()) as any[];
+    return posts.map((p: any) => ({ id: p.id }));
+  } catch (error) {
+    console.warn('Skipping static generation due to DB error');
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
