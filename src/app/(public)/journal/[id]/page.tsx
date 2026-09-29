@@ -10,13 +10,13 @@ export const revalidate = 60; // ISR: revalidate every minute
 
 export async function generateStaticParams() {
   await connectDB();
-  const posts = await BlogPost.find({}, 'id').lean();
-  return posts.map((p) => ({ id: p.id }));
+  const posts = (await BlogPost.find({}, 'id').lean()) as any[];
+  return posts.map((p: any) => ({ id: p.id }));
 }
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   await connectDB();
-  const post = await BlogPost.findOne({ id: params.id }).lean();
+  const post = (await BlogPost.findOne({ id: params.id }).lean()) as any;
   if (!post) return { title: 'Not Found' };
   
   return {
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 
 export default async function ArticlePage({ params }: { params: { id: string } }) {
   await connectDB();
-  const post = await BlogPost.findOne({ id: params.id }).lean();
+  const post = (await BlogPost.findOne({ id: params.id }).lean()) as any;
   if (!post) notFound();
 
   const date = formatDate(post.date);
