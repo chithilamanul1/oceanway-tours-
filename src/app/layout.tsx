@@ -31,8 +31,45 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "OceanWay Tours",
+    "image": "https://cdn.magicpatterns.com/uploads/ubYXeHwWAnuJmCZkRviSrc/logo.png",
+    "@id": "https://oceanwaytours.com",
+    "url": "https://oceanwaytours.com",
+    "telephone": "+94 76 363 4022",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Seeduwa",
+      "addressLocality": "Negombo",
+      "addressCountry": "LK"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 7.2099,
+      "longitude": 79.8374
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  };
+
   return (
     <html lang="en" className={`${poppins.variable} ${greatVibes.variable}`}>
+      <head>
+        <meta name="geo.region" content="LK" />
+        <meta name="geo.placename" content="Negombo" />
+        <meta name="geo.position" content="7.2099;79.8374" />
+        <meta name="ICBM" content="7.2099, 79.8374" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen bg-white font-body text-ink antialiased">
         {children}
       </body>
