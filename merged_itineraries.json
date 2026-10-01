@@ -28,7 +28,12 @@
           "relax after long flight"
         ],
         "accommodation": "Heritance Negombo",
-        "transferTime": "20 mins"
+        "transferTime": "20 mins",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 2,
@@ -39,7 +44,12 @@
           "evening naturalist camp walk"
         ],
         "accommodation": "Leopard Trails",
-        "transferTime": "3.5 hrs"
+        "transferTime": "3.5 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 3,
@@ -49,7 +59,12 @@
           "Full-day 4x4 open-jeep safari",
           "arranged bush lunch"
         ],
-        "accommodation": "Leopard Trails"
+        "accommodation": "Leopard Trails",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 4,
@@ -60,7 +75,12 @@
           "Koneswaram temple & seaside lunch"
         ],
         "accommodation": "Jungle Beach by Uga Escapes",
-        "transferTime": "3.5 hrs"
+        "transferTime": "3.5 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 5,
@@ -70,7 +90,12 @@
           "Guided marine snorkeling safari",
           "beach relaxation"
         ],
-        "accommodation": "Jungle Beach by Uga Escapes"
+        "accommodation": "Jungle Beach by Uga Escapes",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 6,
@@ -80,7 +105,12 @@
           "Whale watching voyage",
           "Dutch Fort walk"
         ],
-        "accommodation": "Jungle Beach by Uga Escapes"
+        "accommodation": "Jungle Beach by Uga Escapes",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 7,
@@ -91,7 +121,12 @@
           "luxury resort check-in"
         ],
         "accommodation": "Uga Bay",
-        "transferTime": "2.5 hrs"
+        "transferTime": "2.5 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 8,
@@ -102,7 +137,12 @@
           "paddleboarding",
           "sunset beach dining"
         ],
-        "accommodation": "Uga Bay"
+        "accommodation": "Uga Bay",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 9,
@@ -113,7 +153,12 @@
           "guided jungle walk"
         ],
         "accommodation": "Gal Oya Lodge",
-        "transferTime": "3 hrs"
+        "transferTime": "3 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 10,
@@ -122,7 +167,12 @@
         "activities": [
           "3.5-hour reservoir boat safari"
         ],
-        "accommodation": "Gal Oya Lodge"
+        "accommodation": "Gal Oya Lodge",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 11,
@@ -132,7 +182,12 @@
           "Vedda chieftain guided forest trek",
           "Sorabora Wewa lake"
         ],
-        "accommodation": "Santani Wellness"
+        "accommodation": "Santani Wellness",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 12,
@@ -142,7 +197,12 @@
           "18-bend mountain pass ascent",
           "Kandy check-in"
         ],
-        "accommodation": "Santani Wellness"
+        "accommodation": "Santani Wellness",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 13,
@@ -152,7 +212,12 @@
           "Royal Botanical Gardens walk",
           "Evening drum prayers at the Temple of the Tooth"
         ],
-        "accommodation": "Santani Wellness"
+        "accommodation": "Santani Wellness",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 14,
@@ -164,7 +229,12 @@
           "transfer to Colombo BIA Airport"
         ],
         "accommodation": "None",
-        "transferTime": "3 hrs"
+        "transferTime": "3 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       }
     ]
   },
@@ -199,7 +269,12 @@
           "cultural dance show"
         ],
         "accommodation": "Cinnamon Citadel",
-        "transferTime": "3.5 hrs"
+        "transferTime": "3.5 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 2,
@@ -211,7 +286,12 @@
           "romantic dinner by the sea"
         ],
         "accommodation": "Ekho Surf Bentota",
-        "transferTime": "3.5 hrs"
+        "transferTime": "3.5 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 3,
@@ -222,7 +302,12 @@
           "Kosgoda turtle conservation",
           "water sports thrill"
         ],
-        "accommodation": "Ekho Surf Bentota"
+        "accommodation": "Ekho Surf Bentota",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 4,
@@ -233,7 +318,12 @@
           "sunset at Galle Face",
           "luxury mall shopping"
         ],
-        "accommodation": "Cinnamon Red"
+        "accommodation": "Cinnamon Red",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 5,
@@ -243,7 +333,12 @@
           "Final souvenir shopping",
           "direct transfer to BIA Airport"
         ],
-        "accommodation": "None"
+        "accommodation": "None",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       }
     ]
   },
@@ -277,7 +372,12 @@
           "Fresh seafood barbecue"
         ],
         "accommodation": "Heritance Negombo",
-        "transferTime": "20 mins"
+        "transferTime": "20 mins",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 2,
@@ -288,7 +388,12 @@
           "beach volleyball",
           "Lagoon sundowners"
         ],
-        "accommodation": "Heritance Negombo"
+        "accommodation": "Heritance Negombo",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 3,
@@ -299,7 +404,12 @@
           "Witness the glowing, spiritual lighting of the Ruwanwelisaya stupa"
         ],
         "accommodation": "Ulagalla by Uga",
-        "transferTime": "3.5 hrs"
+        "transferTime": "3.5 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 4,
@@ -310,7 +420,12 @@
           "Campfire barbecue"
         ],
         "accommodation": "Aliya Resort & Spa",
-        "transferTime": "1.5 hrs"
+        "transferTime": "1.5 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 5,
@@ -320,7 +435,12 @@
           "Colonial mountain railway ride",
           "Live acoustic reggae and cocktails"
         ],
-        "accommodation": "98 Acres Resort & Spa"
+        "accommodation": "98 Acres Resort & Spa",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 6,
@@ -331,7 +451,12 @@
           "Little Adam's Peak ridge hike",
           "Zipline thrills"
         ],
-        "accommodation": "98 Acres Resort & Spa"
+        "accommodation": "98 Acres Resort & Spa",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 7,
@@ -342,7 +467,12 @@
           "Beachfront seafood barbecue"
         ],
         "accommodation": "W15 Weligama",
-        "transferTime": "3.5 hrs"
+        "transferTime": "3.5 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 8,
@@ -352,7 +482,12 @@
           "Snorkel with wild sea turtles",
           "Barefoot beach parties with fire dancers"
         ],
-        "accommodation": "W15 Weligama"
+        "accommodation": "W15 Weligama",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 9,
@@ -363,7 +498,12 @@
           "High-energy rooftop club nightlife"
         ],
         "accommodation": "Cinnamon Red",
-        "transferTime": "1.5 hrs"
+        "transferTime": "1.5 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 10,
@@ -375,7 +515,12 @@
           "Private transfer to Colombo BIA Airport"
         ],
         "accommodation": "None",
-        "transferTime": "35 mins"
+        "transferTime": "35 mins",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       }
     ]
   },
@@ -407,7 +552,12 @@
           "Transfer",
           "Relaxation"
         ],
-        "accommodation": "Family Resort"
+        "accommodation": "Family Resort",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       }
     ]
   },
@@ -439,7 +589,12 @@
           "Transfer",
           "Check-in"
         ],
-        "accommodation": "Luxury Tea Estate"
+        "accommodation": "Luxury Tea Estate",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       }
     ]
   },
@@ -471,7 +626,12 @@
           "Transfer",
           "Evening Safari"
         ],
-        "accommodation": "Safari Camp"
+        "accommodation": "Safari Camp",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       }
     ]
   },
@@ -504,7 +664,12 @@
           "Hotel Check-in",
           "Leisure"
         ],
-        "accommodation": "Bahrain International Hotel / Delmon International Hotel"
+        "accommodation": "Bahrain International Hotel / Delmon International Hotel",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 2,
@@ -517,7 +682,12 @@
           "Qal'at al-Bahrain",
           "Manama Souq"
         ],
-        "accommodation": "Bahrain International Hotel / Delmon International Hotel"
+        "accommodation": "Bahrain International Hotel / Delmon International Hotel",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 3,
@@ -527,7 +697,12 @@
           "Breakfast",
           "Airport Transfer"
         ],
-        "accommodation": "None"
+        "accommodation": "None",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       }
     ]
   },
@@ -561,7 +736,12 @@
           "Hotel Check-in",
           "Leisure"
         ],
-        "accommodation": "Bahrain International Hotel / Delmon International Hotel"
+        "accommodation": "Bahrain International Hotel / Delmon International Hotel",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 2,
@@ -573,7 +753,12 @@
           "Qal'at al-Bahrain",
           "Manama Souq"
         ],
-        "accommodation": "Bahrain International Hotel / Delmon International Hotel"
+        "accommodation": "Bahrain International Hotel / Delmon International Hotel",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 3,
@@ -586,7 +771,12 @@
           "Camel Farm",
           "Tree of Life"
         ],
-        "accommodation": "Bahrain International Hotel / Delmon International Hotel"
+        "accommodation": "Bahrain International Hotel / Delmon International Hotel",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 4,
@@ -596,7 +786,12 @@
           "Breakfast",
           "Airport Transfer"
         ],
-        "accommodation": "None"
+        "accommodation": "None",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       }
     ]
   },
@@ -630,7 +825,12 @@
           "Hotel Check-in",
           "Leisure"
         ],
-        "accommodation": "Bahrain International Hotel / Golden Tulip Bahrain"
+        "accommodation": "Bahrain International Hotel / Golden Tulip Bahrain",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 2,
@@ -642,7 +842,12 @@
           "Qal'at al-Bahrain",
           "Manama Souq"
         ],
-        "accommodation": "Bahrain International Hotel / Golden Tulip Bahrain"
+        "accommodation": "Bahrain International Hotel / Golden Tulip Bahrain",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 3,
@@ -655,7 +860,12 @@
           "Tree of Life",
           "King Fahd Causeway"
         ],
-        "accommodation": "Bahrain International Hotel / Golden Tulip Bahrain"
+        "accommodation": "Bahrain International Hotel / Golden Tulip Bahrain",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 4,
@@ -668,7 +878,12 @@
           "Arad Fort",
           "Pearl Snorkeling"
         ],
-        "accommodation": "Bahrain International Hotel / Golden Tulip Bahrain"
+        "accommodation": "Bahrain International Hotel / Golden Tulip Bahrain",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 5,
@@ -678,7 +893,12 @@
           "Breakfast",
           "Airport Transfer"
         ],
-        "accommodation": "None"
+        "accommodation": "None",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       }
     ]
   },
@@ -711,7 +931,12 @@
           "Private Airport Transfer",
           "Hotel Check-in"
         ],
-        "accommodation": "Bahrain International / Golden Tulip"
+        "accommodation": "Bahrain International / Golden Tulip",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 2,
@@ -722,7 +947,12 @@
           "F1 Practice Session",
           "Circuit Transfers"
         ],
-        "accommodation": "Bahrain International / Golden Tulip"
+        "accommodation": "Bahrain International / Golden Tulip",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 3,
@@ -733,7 +963,12 @@
           "F1 Qualifying Session",
           "Circuit Transfers"
         ],
-        "accommodation": "Bahrain International / Golden Tulip"
+        "accommodation": "Bahrain International / Golden Tulip",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 4,
@@ -743,7 +978,12 @@
           "F1 Grand Prix Race",
           "Circuit Transfers"
         ],
-        "accommodation": "Bahrain International / Golden Tulip"
+        "accommodation": "Bahrain International / Golden Tulip",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 5,
@@ -753,7 +993,12 @@
           "Breakfast",
           "Private Airport Transfer"
         ],
-        "accommodation": "None"
+        "accommodation": "None",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       }
     ]
   },
@@ -788,7 +1033,12 @@
           "Kandy City Tour"
         ],
         "accommodation": "The Velmont Hotel, Kandy",
-        "transferTime": "~3.5 hrs"
+        "transferTime": "~3.5 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 2,
@@ -800,7 +1050,12 @@
           "Nuwara Eliya City Tour"
         ],
         "accommodation": "Queenswood Cottages, Nuwara Eliya",
-        "transferTime": "~3 hrs"
+        "transferTime": "~3 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 3,
@@ -811,7 +1066,12 @@
           "Beach Downtime",
           "Sunset Relaxation"
         ],
-        "accommodation": "Shandaru Blue Hotel, Bentota"
+        "accommodation": "Shandaru Blue Hotel, Bentota",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 4,
@@ -822,7 +1082,12 @@
           "Colombo City Tour",
           "Retail Shopping"
         ],
-        "accommodation": "The Ocean Hotel, Colombo"
+        "accommodation": "The Ocean Hotel, Colombo",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 5,
@@ -832,7 +1097,12 @@
           "Breakfast",
           "Private Airport Drop-off"
         ],
-        "accommodation": "None"
+        "accommodation": "None",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       }
     ]
   },
@@ -867,7 +1137,12 @@
           "Hotel Check-in"
         ],
         "accommodation": "The Velmont Hotel, Kandy",
-        "transferTime": "~3.5 hrs"
+        "transferTime": "~3.5 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 2,
@@ -878,7 +1153,12 @@
           "Gem Ateliers",
           "Temple of the Tooth"
         ],
-        "accommodation": "The Velmont Hotel, Kandy"
+        "accommodation": "The Velmont Hotel, Kandy",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 3,
@@ -890,7 +1170,12 @@
           "Tea Tasting"
         ],
         "accommodation": "Queenswood Cottages, Nuwara Eliya",
-        "transferTime": "~2.5 hrs"
+        "transferTime": "~2.5 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 4,
@@ -901,7 +1186,12 @@
           "Strawberry Farm",
           "Colonial High Tea"
         ],
-        "accommodation": "Queenswood Cottages, Nuwara Eliya"
+        "accommodation": "Queenswood Cottages, Nuwara Eliya",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 5,
@@ -913,7 +1203,12 @@
           "Sunset Cocktail"
         ],
         "accommodation": "Shandaru Blue Hotel, Bentota",
-        "transferTime": "~4.5 hrs"
+        "transferTime": "~4.5 hrs",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 6,
@@ -924,7 +1219,12 @@
           "Colombo City Tour",
           "Luxury Retail Shopping"
         ],
-        "accommodation": "The Ocean Hotel, Colombo"
+        "accommodation": "The Ocean Hotel, Colombo",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       },
       {
         "day": 7,
@@ -934,7 +1234,12 @@
           "Seaside Breakfast",
           "Direct Airport Transfer"
         ],
-        "accommodation": "None"
+        "accommodation": "None",
+        "meals": {
+          "breakfast": true,
+          "lunch": false,
+          "dinner": true
+        }
       }
     ]
   }
