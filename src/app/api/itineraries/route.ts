@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { Itinerary } from '@/lib/models';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     await connectDB();
@@ -9,7 +11,13 @@ export async function GET() {
     return NextResponse.json(itineraries);
   } catch (error: any) {
     console.error('API Error in GET /api/itineraries:', error);
-    return NextResponse.json({ error: 'Failed to fetch itineraries', details: error?.message || String(error) }, { status: 500 });
+    // Fallback to static itineraries if DB fails
+    try {
+      const { extraItineraries } = await import('@/data/extraItineraries');
+      return NextResponse.json(extraItineraries);
+    } catch (importError) {
+      return NextResponse.json({ error: 'Failed to fetch itineraries and fallback failed', details: error?.message || String(error) }, { status: 500 });
+    }
   }
 }
 
