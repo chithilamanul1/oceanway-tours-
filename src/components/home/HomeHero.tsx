@@ -9,22 +9,22 @@ const destinations = [
   {
     id: 1,
     name: "Sri Lanka",
-    image: "https://images.unsplash.com/photo-1580977259648-52b86abfb1dd?q=80&w=600",
+    image: "https://cdn.magicpatterns.com/patterns/generated-images/3a91d4f3-e4c3-4c33-ab9b-1bbaadfb6556.jpg",
   },
   {
     id: 2,
     name: "Saudi Arabia",
-    image: "https://images.unsplash.com/photo-1579899806871-bb6d3cbf07b4?q=80&w=600",
+    image: "https://cdn.magicpatterns.com/patterns/generated-images/8cb0359e-dfc0-47ad-93d0-b1e99cf670bd.jpg",
   },
   {
     id: 3,
     name: "Bahrain",
-    image: "https://images.unsplash.com/photo-1549487565-5c1fa59d18ce?q=80&w=600",
+    image: "https://cdn.magicpatterns.com/patterns/generated-images/cb3b6cb8-ff31-40c7-b69b-f853763e43dc.jpg",
   },
   {
     id: 4,
     name: "Maldives",
-    image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=600",
+    image: "https://cdn.magicpatterns.com/patterns/generated-images/e445e8fc-0b9a-4a0e-ae29-b945ec2f8d7e.jpg",
   }
 ];
 
@@ -50,13 +50,23 @@ export default function HomeHero() {
 
   return (
     <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-black">
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1506905925246-3c4f9c636f45?q=80&w=2000" 
-          alt="Mountains and Lake"
-          className="w-full h-full object-cover opacity-50"
-        />
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="w-full h-full object-cover opacity-60"
+        >
+          <source src="https://cdn.pixabay.com/video/2020/07/04/43870-435738837_large.mp4" type="video/mp4" />
+          {/* Fallback image if video fails */}
+          <img 
+            src="https://cdn.magicpatterns.com/patterns/generated-images/3a91d4f3-e4c3-4c33-ab9b-1bbaadfb6556.jpg" 
+            alt="Mountains and Lake"
+            className="w-full h-full object-cover opacity-50"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/90 via-black/60 to-black/10 z-10" />
       </div>
 
