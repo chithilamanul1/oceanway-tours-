@@ -8,23 +8,23 @@ import { ArrowUpRight } from 'lucide-react';
 const destinations = [
   {
     id: 1,
-    name: "Sri Lanka",
-    image: "https://cdn.magicpatterns.com/patterns/generated-images/3a91d4f3-e4c3-4c33-ab9b-1bbaadfb6556.jpg",
+    name: "Colombo",
+    image: "https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/42/52/4f/10/33/v1_E10/E101BW34.jpg?w=800&cf_fit=scale-down&q=85&format=auto&s=f7af39d7f59c01d9d6c9ce4b99a73e0def3e82fa7accb2b6bbc6444023169306",
   },
   {
     id: 2,
-    name: "Saudi Arabia",
-    image: "https://cdn.magicpatterns.com/patterns/generated-images/8cb0359e-dfc0-47ad-93d0-b1e99cf670bd.jpg",
+    name: "Kandy",
+    image: "https://elements-resized.envatousercontent.com/envato-dam-assets-production/038824ed-b308-4b8a-9f3b-ce8f4e37e655/7e8461d8-0b6c-40ff-9f21-f11fc55b8b42.jpg?w=800&cf_fit=scale-down&q=85&format=auto&s=63ea889f182243f2e0f0bc537ae1d67e1f35549030f17ea60a46b8ebd67a8303",
   },
   {
     id: 3,
-    name: "Bahrain",
-    image: "https://cdn.magicpatterns.com/patterns/generated-images/cb3b6cb8-ff31-40c7-b69b-f853763e43dc.jpg",
+    name: "Galle",
+    image: "https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/35/e3/00/b3/a5/v1_E10/E106JYA4.jpg?w=800&cf_fit=scale-down&q=85&format=auto&s=b57b49e01560f6632b8433c692884bbe0e093dff51bbaf6fbbd46034e16d6173",
   },
   {
     id: 4,
-    name: "Maldives",
-    image: "https://cdn.magicpatterns.com/patterns/generated-images/e445e8fc-0b9a-4a0e-ae29-b945ec2f8d7e.jpg",
+    name: "Ella",
+    image: "https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/7d/12/29/3c/18/v1_E10/E104EHVD.jpg?w=800&cf_fit=scale-down&q=85&format=auto&s=7a4baaf3754a4a1e284746c78efbe6645603af25f045d607e7e7ac0736d63af0",
   }
 ];
 
@@ -59,7 +59,7 @@ export default function HomeHero() {
           playsInline 
           className="w-full h-full object-cover opacity-60"
         >
-          <source src="https://cdn.pixabay.com/video/2020/07/04/43870-435738837_large.mp4" type="video/mp4" />
+          <source src="https://public-assets.content-platform.envatousercontent.com/b88035ec-19c9-4da1-a14c-89c9e74bf5d8/61c3e5bf-5ec7-44b4-b8b0-22fbccbac128/b88035ec-19c9-4da1-a14c-89c9e74bf5d8/preview_540p_crf22_higher_quality.mp4" type="video/mp4" />
           {/* Fallback image if video fails */}
           <img 
             src="https://cdn.magicpatterns.com/patterns/generated-images/3a91d4f3-e4c3-4c33-ab9b-1bbaadfb6556.jpg" 
