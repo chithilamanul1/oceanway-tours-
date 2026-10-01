@@ -125,25 +125,25 @@ export default function HomeHero() {
                   // Define the arc positions
                   if (offset === 0) {
                     y = 0;
-                    x = isMobile ? 40 : -80; // Pushed right on mobile to make space for left label
+                    x = isMobile ? 80 : -80; // Pushed further right on mobile to make space for left label
                     scale = isMobile ? 1.05 : 1.1;
                     opacity = 1;
                     zIndex = 20;
                   } else if (offset === 1) {
                     y = isMobile ? 110 : 150;
-                    x = isMobile ? 80 : 0;
+                    x = isMobile ? 100 : 0;
                     scale = isMobile ? 0.8 : 0.75;
                     opacity = 0.6;
                     zIndex = 10;
                   } else if (offset === destinations.length - 1) {
                     y = isMobile ? -110 : -150;
-                    x = isMobile ? 80 : 0;
+                    x = isMobile ? 100 : 0;
                     scale = isMobile ? 0.8 : 0.75;
                     opacity = 0.6;
                     zIndex = 10;
                   } else {
                     y = isMobile ? 180 * (offset > 1 ? 1 : -1) : 250 * (offset > 1 ? 1 : -1);
-                    x = isMobile ? 120 : 100;
+                    x = isMobile ? 140 : 100;
                     scale = 0.5;
                     opacity = 0;
                     zIndex = 0;
@@ -172,9 +172,9 @@ export default function HomeHero() {
                         <motion.div 
                           initial={{ opacity: 0, x: 20 }}
                           animate={{ opacity: 1, x: 0 }}
-                          className="absolute right-[100%] mr-4 md:mr-6 whitespace-nowrap text-right flex flex-col items-end"
+                          className="absolute right-[100%] mr-3 md:mr-6 whitespace-nowrap text-right flex flex-col items-end"
                         >
-                          <h3 className="text-white text-2xl md:text-3xl font-bold drop-shadow-lg leading-tight font-display">
+                          <h3 className="text-white text-xl sm:text-2xl md:text-3xl font-bold drop-shadow-lg leading-tight font-display">
                             {dest.name.split('\n')[0] || dest.name}
                           </h3>
                           {dest.name.includes('\n') && (
