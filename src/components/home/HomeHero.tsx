@@ -95,7 +95,7 @@ export default function HomeHero() {
             </p>
             
             {/* Button */}
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <div className="hidden sm:flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Link 
                 href="/itineraries"
                 className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all text-center shadow-xl group"
