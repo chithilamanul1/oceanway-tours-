@@ -10,9 +10,9 @@ export default function QuoteFunnel() {
   const [formData, setFormData] = useState({
     name: '', email: '', phone: '', destination: '', dates: '', travellers: '2', budget: '', theme: '', message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleNext = () => setStep((s) => Math.min(s + 1, 4));
-  const handlePrev = () => setStep((s) => Math.max(s - 1, 1));
+  const handleNext = () => setStep((s) => Math.min(s + 1, 2));
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,20 +20,22 @@ export default function QuoteFunnel() {
 
   const submitForm = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API call
+    setIsSubmitting(true);
     try {
       await fetch('/api/inquiries', { method: 'POST', body: JSON.stringify(formData) });
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsSubmitting(false);
+      handleNext();
     }
-    handleNext();
   };
 
   return (
     <div className="max-w-4xl mx-auto bg-white rounded-[28px] shadow-xl border border-line overflow-hidden">
       {/* Progress Bar */}
       <div className="flex border-b border-line">
-        {[1, 2, 3, 4].map((i) => (
+        {[1, 2].map((i) => (
           <div key={i} className={`flex-1 h-2 ${i <= step ? 'bg-brand' : 'bg-line/30'} transition-colors duration-300`} />
         ))}
       </div>
@@ -99,55 +101,6 @@ export default function QuoteFunnel() {
                     <p className="text-sm text-forest/70">Senior Travel Consultant</p>
                   </div>
                 </div>
-              </div>
-              
-              <div>
-                <button onClick={handleNext} className="bg-brand text-white px-8 py-3 rounded-full font-bold hover:bg-forest transition-colors">
-                  View Sample Quotes
-                </button>
-              </div>
-            </motion.div>
-          )}
-
-          {step === 3 && (
-            <motion.div key="step3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
-              <h2 className="text-3xl font-bold text-forest mb-2 font-display text-center">Your 3 Personalised Quotes</h2>
-              <p className="text-center text-forest/70 mb-8">Select the package that best fits your travel style.</p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                {['Essential', 'Premium', 'Luxury'].map((tier, idx) => (
-                  <div key={tier} className={`border ${idx === 1 ? 'border-brand bg-brand/5' : 'border-line'} rounded-2xl p-6 text-center cursor-pointer hover:border-brand transition-colors`} onClick={handleNext}>
-                    <h3 className="font-bold text-forest mb-2">{tier}</h3>
-                    <p className="text-2xl font-bold text-brand mb-4">${(idx + 1) * 1500}</p>
-                    <ul className="text-sm text-forest/70 space-y-2 mb-6">
-                      <li>3/4 Star Hotels</li>
-                      <li>Group Tours</li>
-                      <li>Standard Transfers</li>
-                    </ul>
-                    <button className={`w-full py-2 rounded-full font-bold ${idx === 1 ? 'bg-brand text-white' : 'bg-sand text-forest'}`}>Select</button>
-                  </div>
-                ))}
-              </div>
-              <button onClick={handlePrev} className="text-forest/60 hover:text-forest font-medium">Back</button>
-            </motion.div>
-          )}
-
-          {step === 4 && (
-            <motion.div key="step4" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
-              <h2 className="text-3xl font-bold text-forest mb-8 font-display text-center">Secure Your Booking</h2>
-              {/* Payment Gateway mock would go here, we'll keep it simple for this component */}
-              <div className="bg-sand p-8 rounded-2xl text-center mb-8 border border-line border-dashed">
-                <p className="text-forest/70 mb-4">Payment integration simulation...</p>
-                <div className="flex gap-4 justify-center">
-                  <div className="w-16 h-10 bg-white rounded shadow" />
-                  <div className="w-16 h-10 bg-white rounded shadow" />
-                </div>
-              </div>
-              <div className="flex justify-between items-center">
-                <button onClick={handlePrev} className="text-forest/60 hover:text-forest font-medium">Back</button>
-                <button className="bg-[#10B981] text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-[#059669] transition-colors">
-                  Pay Securely
-                </button>
               </div>
             </motion.div>
           )}
