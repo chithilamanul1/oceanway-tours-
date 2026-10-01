@@ -45,6 +45,12 @@ export default async function Home() {
     console.error('Failed to connect to MongoDB, using seed data.', error);
   }
 
+  const { extraItineraries } = await import('@/data/extraItineraries');
+  const extra = JSON.parse(JSON.stringify(extraItineraries));
+  const existingIds = new Set(itineraries.map((i: any) => i.id));
+  const toAdd = extra.filter((i: any) => !existingIds.has(i.id));
+  itineraries = [...itineraries, ...toAdd] as any;
+
   return (
     <>
       <HomeHero />

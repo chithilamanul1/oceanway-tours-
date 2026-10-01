@@ -9,19 +9,33 @@ import type { Metadata } from 'next';
 export const revalidate = 60; // ISR every 60s
 
 export async function generateStaticParams() {
+  let dbItems: any[] = [];
   try {
     await connectDB();
-    const items = (await Itinerary.find({}, 'id').lean()) as any[];
-    return items.map((i: any) => ({ id: i.id }));
+    dbItems = (await Itinerary.find({}, 'id').lean()) as any[];
   } catch (error) {
-    console.warn('Skipping static generation due to DB error');
-    return [];
+    console.warn('Skipping DB static generation due to error');
   }
+  
+  const { extraItineraries } = await import('@/data/extraItineraries');
+  const allIds = new Set(dbItems.map((i: any) => i.id));
+  extraItineraries.forEach(i => allIds.add(i.id));
+
+  return Array.from(allIds).map(id => ({ id }));
 }
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  await connectDB();
-  const item = (await Itinerary.findOne({ id: params.id }).lean()) as any;
+  let item = null;
+  try {
+    await connectDB();
+    item = (await Itinerary.findOne({ id: params.id }).lean()) as any;
+  } catch (e) { }
+
+  if (!item) {
+    const { extraItineraries } = await import('@/data/extraItineraries');
+    item = extraItineraries.find(i => i.id === params.id) as any;
+  }
+
   if (!item) return { title: 'Not Found' };
   
   return {
@@ -36,8 +50,19 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 }
 
 export default async function ItineraryDetailPage({ params }: { params: { id: string } }) {
-  await connectDB();
-  const itinerary = (await Itinerary.findOne({ id: params.id }).lean()) as any;
+  let itinerary = null;
+  try {
+    await connectDB();
+    itinerary = (await Itinerary.findOne({ id: params.id }).lean()) as any;
+  } catch (error) {
+    console.warn('DB error, falling back to static');
+  }
+
+  if (!itinerary) {
+    const { extraItineraries } = await import('@/data/extraItineraries');
+    itinerary = extraItineraries.find((i: any) => i.id === params.id) as any;
+  }
+
   if (!itinerary) notFound();
 
   return (

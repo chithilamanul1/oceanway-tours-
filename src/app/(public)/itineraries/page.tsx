@@ -26,6 +26,12 @@ export default async function ItinerariesPage() {
     console.error('MongoDB fetch failed on Itineraries page', error);
   }
 
+  const { extraItineraries } = await import('@/data/extraItineraries');
+  const extra = JSON.parse(JSON.stringify(extraItineraries));
+  const existingIds = new Set(itineraries.map((i: any) => i.id));
+  const toAdd = extra.filter((i: any) => !existingIds.has(i.id));
+  itineraries = [...itineraries, ...toAdd] as any;
+
   return (
     <>
       <PageHero
