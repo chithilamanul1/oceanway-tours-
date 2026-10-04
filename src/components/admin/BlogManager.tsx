@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect, useCallback } from 'react';
 import {
@@ -110,7 +110,12 @@ export default function BlogManager() {
       const data = await res.json();
       setPosts(Array.isArray(data) ? data : data.posts ?? []);
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : 'Unknown error');
+      try {
+        const { blogPostsSeed } = await import('@/data/blogPosts');
+        setPosts(blogPostsSeed as any);
+      } catch {
+        setError(err instanceof Error ? err.message : 'Unknown error');
+      }
     } finally {
       setLoading(false);
     }

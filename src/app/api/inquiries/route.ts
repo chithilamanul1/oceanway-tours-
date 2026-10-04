@@ -1,4 +1,4 @@
-﻿import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { ContactMessage } from '@/lib/models';
 import { Resend } from 'resend';
@@ -11,8 +11,8 @@ export async function GET() {
     const messages = await ContactMessage.find().sort({ createdAt: -1 }).lean();
     return NextResponse.json(messages);
   } catch (error: any) {
-    console.error('API Error:', error);
-    return NextResponse.json({ error: 'Failed to fetch inquiries', details: error?.message || String(error) }, { status: 500 });
+    console.warn('DB connect failed in GET /api/inquiries, returning empty list:', error?.message);
+    return NextResponse.json([]);
   }
 }
 

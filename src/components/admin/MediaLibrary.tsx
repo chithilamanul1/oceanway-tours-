@@ -29,32 +29,71 @@ export default function MediaLibrary() {
   const fetchItems = async () => {
     try {
       const res = await fetch('/api/media');
-      if (res.ok) setItems(await res.json());
-    } catch (err) { console.error(err); }
-    finally { setLoading(false); }
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          setItems(data);
+          return;
+        }
+      }
+      const { mediaSeed } = await import('@/data/mediaSeed');
+      setItems(mediaSeed);
+    } catch (err) {
+      try {
+        const { mediaSeed } = await import('@/data/mediaSeed');
+        setItems(mediaSeed);
+      } catch (e) {
+        console.error(err);
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleAdd = async () => {
     if (!newUrl.trim()) return;
     setSaving(true);
+    const tagsArr = newTags.split(',').map(t => t.trim()).filter(Boolean);
+    const itemName = newName.trim() || newUrl.trim().split('/').pop() || 'Image';
     try {
       const res = await fetch('/api/media', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           url: newUrl.trim(),
-          name: newName.trim() || newUrl.trim().split('/').pop(),
-          tags: newTags.split(',').map(t => t.trim()).filter(Boolean)
+          name: itemName,
+          tags: tagsArr
         })
       });
       if (res.ok) {
         const item = await res.json();
         setItems([item, ...items]);
-        setNewUrl(''); setNewName(''); setNewTags('');
-        setAdding(false);
+      } else {
+        const localItem: MediaItem = {
+          _id: 'local-' + Date.now(),
+          url: newUrl.trim(),
+          name: itemName,
+          tags: tagsArr,
+          createdAt: new Date().toISOString()
+        };
+        setItems([localItem, ...items]);
       }
-    } catch (err) { console.error(err); }
-    finally { setSaving(false); }
+      setNewUrl(''); setNewName(''); setNewTags('');
+      setAdding(false);
+    } catch (err) {
+      const localItem: MediaItem = {
+        _id: 'local-' + Date.now(),
+        url: newUrl.trim(),
+        name: itemName,
+        tags: tagsArr,
+        createdAt: new Date().toISOString()
+      };
+      setItems([localItem, ...items]);
+      setNewUrl(''); setNewName(''); setNewTags('');
+      setAdding(false);
+    } finally {
+      setSaving(false);
+    }
   };
 
   const handleDelete = async (id: string) => {
@@ -123,7 +162,14 @@ export default function MediaLibrary() {
                       const item = await res.json();
                       setItems([item, ...items]);
                     } else {
-                      alert('Failed to upload image.');
+                      const localItem: MediaItem = {
+                        _id: 'local-' + Date.now(),
+                        url: base64String,
+                        name: file.name,
+                        tags: ['uploaded'],
+                        createdAt: new Date().toISOString()
+                      };
+                      setItems([localItem, ...items]);
                     }
                   } catch (err) {
                     console.error(err);

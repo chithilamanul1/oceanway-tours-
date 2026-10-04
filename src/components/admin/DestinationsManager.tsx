@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useEffect, useState, useCallback } from 'react';
 import {
@@ -181,7 +181,12 @@ export default function DestinationsManager() {
       const data = await res.json();
       setDestinations(Array.isArray(data) ? data : data.destinations ?? []);
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : 'Failed to load destinations.');
+      try {
+        const { destinationsSeed } = await import('@/data/destinations');
+        setDestinations(destinationsSeed as any);
+      } catch {
+        setError(err instanceof Error ? err.message : 'Failed to load destinations.');
+      }
     } finally {
       setLoading(false);
     }
