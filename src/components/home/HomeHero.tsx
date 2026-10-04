@@ -14,17 +14,17 @@ const destinations = [
   {
     id: 2,
     name: "Saudi Arabia",
-    image: "https://cdn.magicpatterns.com/patterns/generated-images/8cb0359e-dfc0-47ad-93d0-b1e99cf670bd.jpg",
+    image: "/WhatsApp%20Image%202026-09-24%20at%201.23.15%20AM%20(2).jpeg",
   },
   {
     id: 3,
     name: "Bahrain",
-    image: "https://cdn.magicpatterns.com/patterns/generated-images/cb3b6cb8-ff31-40c7-b69b-f853763e43dc.jpg",
+    image: "/WhatsApp%20Image%202026-09-24%20at%201.23.16%20AM%20(1).jpeg",
   },
   {
     id: 4,
     name: "Maldives",
-    image: "https://cdn.magicpatterns.com/patterns/generated-images/e445e8fc-0b9a-4a0e-ae29-b945ec2f8d7e.jpg",
+    image: "https://cdn.magicpatterns.com/patterns/generated-images/8cb0359e-dfc0-47ad-93d0-b1e99cf670bd.jpg",
   }
 ];
 
