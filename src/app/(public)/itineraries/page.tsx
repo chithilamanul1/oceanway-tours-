@@ -39,6 +39,12 @@ export default async function ItinerariesPage() {
   const toAdd = extra.filter((i: any) => !existingIds.has(i.id));
   itineraries = [...itineraries, ...toAdd] as any;
 
+  // Ensure ONLY the customized packages are shown
+  itineraries = itineraries.filter((i: any) => !i.id.startsWith('itin-'));
+  if (itineraries.length === 0) {
+    itineraries = extra;
+  }
+
   return (
     <>
       <PageHero

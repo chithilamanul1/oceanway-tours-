@@ -79,15 +79,9 @@ export default async function ItineraryDetailPage({ params }: { params: { id: st
         <div className="mx-auto grid max-w-7xl gap-10 px-6 pb-20 pt-8 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:pb-28 lg:pt-16">
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="flex flex-wrap items-center gap-3">
-                <p className="text-xs font-semibold uppercase tracking-widest text-terracotta">
-                  {itinerary.destinationName} • {itinerary.tier}
-                </p>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-3 py-0.5 text-xs font-semibold text-emerald-300 border border-emerald-400/30">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  100% Customizable & Editable
-                </span>
-              </div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-terracotta">
+                {itinerary.destinationName} • {itinerary.tier}
+              </p>
               <h1 className="font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
                 {itinerary.title}
               </h1>

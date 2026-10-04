@@ -26,15 +26,9 @@ export default function ItineraryCard({ itinerary }: ItineraryCardProps) {
       </div>
       
       <div className="p-6 flex flex-col flex-grow">
-        <div className="flex items-center justify-between gap-2 mb-2">
-          <div className="flex items-center gap-1.5 text-brand text-sm font-semibold uppercase tracking-wider">
-            <MapPin size={14} />
-            {itinerary.destinationName}
-          </div>
-          <span className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200/80 rounded-full px-2.5 py-0.5 whitespace-nowrap">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-            100% Customizable & Editable
-          </span>
+        <div className="flex items-center gap-1.5 text-brand text-sm font-semibold uppercase tracking-wider mb-2">
+          <MapPin size={14} />
+          {itinerary.destinationName}
         </div>
         
         <h3 className="text-xl font-bold text-forest mb-3 line-clamp-2 hover:text-brand transition-colors">

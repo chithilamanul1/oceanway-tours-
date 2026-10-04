@@ -22,8 +22,8 @@ import { Itinerary as ItineraryModel, Destination as DestinationModel } from '@/
 export const revalidate = 60; // Revalidate every 60 seconds
 
 export default async function Home() {
-  let itineraries = itinerariesSeed;
-  let destinations = destinationsSeed;
+  let itineraries: any[] = [];
+  let destinations: any[] = [];
 
   try {
     await connectDB();
@@ -32,14 +32,9 @@ export default async function Home() {
     
     if (dbItineraries.length > 0) {
       itineraries = JSON.parse(JSON.stringify(dbItineraries));
-    } else {
-      await ItineraryModel.insertMany(itinerariesSeed);
     }
-
     if (dbDestinations.length > 0) {
       destinations = JSON.parse(JSON.stringify(dbDestinations));
-    } else {
-      await DestinationModel.insertMany(destinationsSeed);
     }
   } catch (error) {
     console.error('Failed to connect to MongoDB, using seed data.', error);
@@ -50,6 +45,16 @@ export default async function Home() {
   const existingIds = new Set(itineraries.map((i: any) => i.id));
   const toAdd = extra.filter((i: any) => !existingIds.has(i.id));
   itineraries = [...itineraries, ...toAdd] as any;
+
+  // Filter out any legacy dummy tours so ONLY the customized tours are shown
+  itineraries = itineraries.filter((i: any) => !i.id.startsWith('itin-'));
+  if (itineraries.length === 0) {
+    itineraries = extra;
+  }
+
+  if (destinations.length === 0) {
+    destinations = destinationsSeed as any;
+  }
 
   return (
     <>

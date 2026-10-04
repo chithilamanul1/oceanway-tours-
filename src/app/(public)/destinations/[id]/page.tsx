@@ -14,7 +14,9 @@ export default function DestinationDetailPage({ params }: { params: { id: string
   const destination = destinationsSeed.find((item) => item.id === params.id);
   if (!destination) notFound();
 
-  const relatedJourneys = itinerariesSeed.filter((item) => item.destinationId === destination.id);
+  const relatedJourneys = itinerariesSeed.filter(
+    (item) => item.destinationId === destination.id || item.destinationName === destination.tag || item.destinationName === destination.name
+  );
 
   return (
     <>
