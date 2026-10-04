@@ -6,6 +6,16 @@ export const contactInfo = {
   hours: 'Available 24/7',
   googleBusiness: 'https://share.google/S6DsIzcQvoLdH3rYU',
   googleReviewsUrl: 'https://share.google/S6DsIzcQvoLdH3rYU',
+  facebook: 'https://www.facebook.com/share/1DFNG1xuyq/',
+  linkedin: 'https://www.linkedin.com/company/oceanway-tours/',
+  instagram: 'https://www.instagram.com/oceanwaytours',
+};
+
+export const socialLinks = {
+  facebook: 'https://www.facebook.com/share/1DFNG1xuyq/',
+  linkedin: 'https://www.linkedin.com/company/oceanway-tours/',
+  instagram: 'https://www.instagram.com/oceanwaytours',
+  google: 'https://share.google/S6DsIzcQvoLdH3rYU',
 };
 
 export const logoUrl = '/logo.png';

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import PageHero from '@/components/ui/PageHero';
 import QuoteFunnel from '@/components/contact/QuoteFunnel';
 import { contactInfo } from '@/data/siteContent';
-import { Clock, Mail, MapPin, Phone, Star } from 'lucide-react';
+import { Clock, Mail, MapPin, Phone, Star, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -76,6 +76,39 @@ export default function ContactPage() {
                   Profile ↗
                 </span>
               </a>
+            </div>
+
+            <div className="mt-4 pt-4 border-t border-line/40">
+              <p className="text-xs font-semibold text-charcoal/70 mb-3 uppercase tracking-wider">Social Channels</p>
+              <div className="grid grid-cols-3 gap-2">
+                <a
+                  href={contactInfo.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 py-2.5 px-2 bg-white hover:bg-brand hover:text-white rounded-xl border border-line text-xs font-semibold text-forest transition-colors shadow-sm"
+                >
+                  <Facebook size={14} />
+                  <span>Facebook</span>
+                </a>
+                <a
+                  href={contactInfo.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 py-2.5 px-2 bg-white hover:bg-brand hover:text-white rounded-xl border border-line text-xs font-semibold text-forest transition-colors shadow-sm"
+                >
+                  <Instagram size={14} />
+                  <span>Instagram</span>
+                </a>
+                <a
+                  href={contactInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 py-2.5 px-2 bg-white hover:bg-brand hover:text-white rounded-xl border border-line text-xs font-semibold text-forest transition-colors shadow-sm"
+                >
+                  <Linkedin size={14} />
+                  <span>LinkedIn</span>
+                </a>
+              </div>
             </div>
           </aside>
           <div className="rounded-[28px] border border-line p-6 sm:p-10">

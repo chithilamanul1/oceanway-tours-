@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Mail, Phone, Menu, X } from 'lucide-react';
+import { Mail, Phone, Menu, X, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { contactInfo, logoUrl } from '@/data/siteContent';
 
 export default function SiteHeader() {
@@ -40,6 +40,45 @@ export default function SiteHeader() {
             <a href={`tel:${contactInfo.phone.split('/')[0].trim()}`} className="flex items-center gap-2 hover:text-mint transition-colors">
               <Phone size={16} />
               {contactInfo.phone}
+            </a>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <a 
+              href={contactInfo.googleBusiness} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              title="Google Business Profile" 
+              className="hover:text-mint transition-colors flex items-center gap-1 text-xs bg-white/15 px-2.5 py-0.5 rounded-full font-medium"
+            >
+              <span>Google 5.0 ★</span>
+            </a>
+            <a 
+              href={contactInfo.facebook} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              title="OceanWay Tours on Facebook" 
+              className="hover:text-mint transition-colors p-1"
+            >
+              <Facebook size={15} />
+            </a>
+            <a 
+              href={contactInfo.instagram} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              title="OceanWay Tours on Instagram" 
+              className="hover:text-mint transition-colors p-1"
+            >
+              <Instagram size={15} />
+            </a>
+            <a 
+              href={contactInfo.linkedin} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              title="OceanWay Tours on LinkedIn" 
+              className="hover:text-mint transition-colors p-1"
+            >
+              <Linkedin size={15} />
             </a>
           </div>
         </div>
@@ -119,6 +158,26 @@ export default function SiteHeader() {
             >
               Get a Quote
             </Link>
+
+            <div className="pt-2 flex items-center justify-center gap-5 text-forest/70 border-t border-line">
+              <a 
+                href={contactInfo.googleBusiness} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-brand transition-colors text-xs font-semibold flex items-center gap-1 bg-sand px-2.5 py-1 rounded-full"
+              >
+                <span>Google 5.0 ★</span>
+              </a>
+              <a href={contactInfo.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors p-1.5 rounded-full bg-sand">
+                <Facebook size={16} />
+              </a>
+              <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors p-1.5 rounded-full bg-sand">
+                <Instagram size={16} />
+              </a>
+              <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors p-1.5 rounded-full bg-sand">
+                <Linkedin size={16} />
+              </a>
+            </div>
           </div>
         </div>
       )}
