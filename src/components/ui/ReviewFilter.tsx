@@ -11,7 +11,7 @@ export default function ReviewFilter() {
   const handleClick = (value: number) => {
     setRating(value);
     if (value === 5) {
-      window.open('https://share.google/S8Qqptam62GHSUq4m', '_blank');
+      window.open('https://share.google/S6DsIzcQvoLdH3rYU', '_blank');
       setSubmitted(true);
     } else {
       setSubmitted(true);

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Star } from 'lucide-react';
-import { stats } from '@/data/siteContent';
+import { stats, contactInfo } from '@/data/siteContent';
 import ReviewFilter from '@/components/ui/ReviewFilter';
 
 export default function SocialProof() {
@@ -42,11 +42,16 @@ export default function SocialProof() {
             </div>
           </div>
 
-          <div className="w-px h-12 bg-line hidden lg:block" />
+          <div className="w-px h-12 bg-line hidden sm:block" />
 
-          <div className="flex items-center gap-4 hidden lg:flex cursor-pointer hover:opacity-80 transition-opacity" onClick={() => window.open('https://share.google/S8Qqptam62GHSUq4m', '_blank')}>
-             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md p-2 overflow-hidden border border-line/50">
-                <img src="/google-logo.png" alt="Google" className="w-full h-full object-cover" />
+          <a 
+            href={contactInfo.googleReviewsUrl || 'https://share.google/S6DsIzcQvoLdH3rYU'}
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity"
+          >
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md p-2 overflow-hidden border border-line/50">
+              <img src="/google-logo.png" alt="Google" className="w-full h-full object-cover" />
             </div>
             <div>
               <div className="flex gap-1 text-[#F59E0B] mb-1">
@@ -54,9 +59,9 @@ export default function SocialProof() {
                   <Star key={i} size={16} fill="currentColor" />
                 ))}
               </div>
-              <p className="text-sm font-bold text-forest">5.0/5 Google Reviews</p>
+              <p className="text-sm font-bold text-forest hover:text-brand transition-colors">5.0/5 Google Reviews</p>
             </div>
-          </div>
+          </a>
 
           <div className="w-px h-12 bg-line hidden xl:block" />
 

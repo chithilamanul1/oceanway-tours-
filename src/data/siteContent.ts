@@ -4,6 +4,8 @@ export const contactInfo = {
   whatsapp: '94763634022',
   address: 'Oceanway Tours (Pvt) Ltd, Negombo, Sri Lanka',
   hours: 'Available 24/7',
+  googleBusiness: 'https://share.google/S6DsIzcQvoLdH3rYU',
+  googleReviewsUrl: 'https://share.google/S6DsIzcQvoLdH3rYU',
 };
 
 export const logoUrl = '/logo.png';
