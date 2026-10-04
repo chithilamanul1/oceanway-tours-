@@ -26,6 +26,13 @@ export default async function ItinerariesPage() {
     console.error('MongoDB fetch failed on Itineraries page', error);
   }
 
+  if (!destinations || destinations.length === 0) {
+    try {
+      const { destinationsSeed } = await import('@/data/destinations');
+      destinations = JSON.parse(JSON.stringify(destinationsSeed));
+    } catch (e) {}
+  }
+
   const { extraItineraries } = await import('@/data/extraItineraries');
   const extra = JSON.parse(JSON.stringify(extraItineraries));
   const existingIds = new Set(itineraries.map((i: any) => i.id));

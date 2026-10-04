@@ -8,7 +8,10 @@ export async function GET() {
   try {
     await connectDB();
     const itineraries = await Itinerary.find().lean();
-    return NextResponse.json(itineraries);
+    const { extraItineraries } = await import('@/data/extraItineraries');
+    const existingIds = new Set(itineraries.map((i: any) => i.id));
+    const merged = [...itineraries, ...extraItineraries.filter((i: any) => !existingIds.has(i.id))];
+    return NextResponse.json(merged);
   } catch (error: any) {
     console.error('API Error in GET /api/itineraries:', error);
     // Fallback to static itineraries if DB fails

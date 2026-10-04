@@ -79,9 +79,15 @@ export default async function ItineraryDetailPage({ params }: { params: { id: st
         <div className="mx-auto grid max-w-7xl gap-10 px-6 pb-20 pt-8 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:pb-28 lg:pt-16">
           <div className="space-y-8">
             <div className="space-y-4">
-              <p className="text-xs font-semibold uppercase tracking-widest text-terracotta">
-                {itinerary.destinationName} • {itinerary.tier}
-              </p>
+              <div className="flex flex-wrap items-center gap-3">
+                <p className="text-xs font-semibold uppercase tracking-widest text-terracotta">
+                  {itinerary.destinationName} • {itinerary.tier}
+                </p>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-3 py-0.5 text-xs font-semibold text-emerald-300 border border-emerald-400/30">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  100% Customizable & Editable
+                </span>
+              </div>
               <h1 className="font-display text-5xl leading-[1.05] tracking-tight sm:text-6xl">
                 {itinerary.title}
               </h1>
@@ -127,7 +133,7 @@ export default async function ItineraryDetailPage({ params }: { params: { id: st
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-terracotta px-8 py-4 text-sm font-semibold text-canvas transition-colors hover:bg-white hover:text-forest"
               >
-                Request a quote <ArrowUpRight size={18} />
+                Customize & Request Quote <ArrowUpRight size={18} />
               </Link>
             </div>
           </div>
@@ -145,11 +151,24 @@ export default async function ItineraryDetailPage({ params }: { params: { id: st
       <section className="bg-canvas py-20 lg:py-32">
         <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1fr_400px] lg:px-10">
           <div>
+            <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-xl border border-line bg-sand/60 p-4">
+              <div className="flex items-start gap-3">
+                <span className="text-lg">✏️</span>
+                <div>
+                  <p className="text-sm font-semibold text-forest">Flexible & Editable Daily Plan</p>
+                  <p className="text-xs text-forest/70">Need extra nights, a different hotel tier, or custom excursions? All day plans can be tailored to your requirements.</p>
+                </div>
+              </div>
+              <Link href="/contact" className="shrink-0 text-xs font-bold text-brand hover:underline">
+                Customize Plan →
+              </Link>
+            </div>
+
             <h2 className="mb-12 font-display text-3xl text-forest sm:text-4xl">Day by day</h2>
             <DayByDay dayPlans={itinerary.dayPlans} />
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             <div className="rounded-2xl border border-line bg-white p-8">
               <h3 className="font-display text-xl text-forest">Trip Highlights</h3>
               <ul className="mt-6 space-y-4">
@@ -162,6 +181,20 @@ export default async function ItineraryDetailPage({ params }: { params: { id: st
               </ul>
             </div>
 
+            {itinerary.inclusions && itinerary.inclusions.length > 0 && (
+              <div className="rounded-2xl border border-line bg-white p-8">
+                <h3 className="font-display text-xl text-forest">What's Included</h3>
+                <ul className="mt-6 space-y-3">
+                  {itinerary.inclusions.map((item: string, index: number) => (
+                    <li key={index} className="flex gap-3 text-sm text-charcoal/80">
+                      <Check className="shrink-0 text-emerald-600" size={18} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             <div className="rounded-2xl bg-sand p-8">
               <p className="text-sm font-semibold uppercase tracking-wider text-forest">
                 From
@@ -173,11 +206,21 @@ export default async function ItineraryDetailPage({ params }: { params: { id: st
               <p className="mt-4 text-sm leading-relaxed text-forest/70">
                 Prices are subject to change based on seasonality, group size, and specific accommodation choices.
               </p>
+
+              <div className="mt-6 rounded-xl border border-emerald-300/80 bg-emerald-50 p-4 text-emerald-950">
+                <p className="text-xs font-bold uppercase tracking-wider text-emerald-800">
+                  ✨ 100% Tailored to You
+                </p>
+                <p className="mt-1.5 text-xs leading-relaxed text-emerald-900/80">
+                  <strong>Note:</strong> Every day, hotel, activity, and route in this itinerary can be fully edited and customized to fit your specific schedule, preferences, and budget.
+                </p>
+              </div>
+
               <Link
                 href="/contact"
-                className="mt-8 flex w-full items-center justify-center gap-2 rounded-full bg-forest px-6 py-4 text-sm font-semibold text-canvas transition-colors hover:bg-brand"
+                className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-forest px-6 py-4 text-sm font-semibold text-canvas transition-colors hover:bg-brand"
               >
-                Plan this trip
+                Plan & Customize Trip
               </Link>
             </div>
           </div>

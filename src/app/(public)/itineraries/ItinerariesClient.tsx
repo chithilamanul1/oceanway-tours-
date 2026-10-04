@@ -28,7 +28,7 @@ export function ItinerariesClient({ itineraries, destinations }: Props) {
     let result = itineraries;
     if (regionFilter !== 'All') {
       const destIds = destinations.filter((d) => d.tag === regionFilter).map((d) => d.id);
-      result = result.filter((item) => destIds.includes(item.destinationId));
+      result = result.filter((item) => destIds.includes(item.destinationId) || item.destinationName === regionFilter);
     }
     if (tierFilter !== 'All') {
       result = result.filter((item) => item.tier === tierFilter);
