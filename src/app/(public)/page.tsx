@@ -41,13 +41,15 @@ export default async function Home() {
   }
 
   const { extraItineraries } = await import('@/data/extraItineraries');
+  const { mergeItinerariesWithStore, mergeDestinationsWithStore } = await import('@/lib/dataStore');
   const extra = JSON.parse(JSON.stringify(extraItineraries));
   const existingIds = new Set(itineraries.map((i: any) => i.id));
   const toAdd = extra.filter((i: any) => !existingIds.has(i.id));
-  itineraries = [...itineraries, ...toAdd] as any;
+  const combined = [...itineraries, ...toAdd] as any;
+  const merged = mergeItinerariesWithStore(combined);
 
   // Filter out any legacy dummy tours so ONLY the customized tours are shown
-  itineraries = itineraries.filter((i: any) => !i.id.startsWith('itin-'));
+  itineraries = merged.filter((i: any) => !i.id.startsWith('itin-'));
   if (itineraries.length === 0) {
     itineraries = extra;
   }
@@ -55,6 +57,7 @@ export default async function Home() {
   if (destinations.length === 0) {
     destinations = destinationsSeed as any;
   }
+  destinations = mergeDestinationsWithStore(destinations);
 
   return (
     <>

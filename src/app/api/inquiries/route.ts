@@ -5,22 +5,43 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+import { getStoreEnquiries, saveStoreEnquiry } from '@/lib/dataStore';
+
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
+  let dbMessages: any[] = [];
   try {
     await connectDB();
-    const messages = await ContactMessage.find().sort({ createdAt: -1 }).lean();
-    return NextResponse.json(messages);
+    dbMessages = await ContactMessage.find().sort({ createdAt: -1 }).lean();
   } catch (error: any) {
-    console.warn('DB connect failed in GET /api/inquiries, returning empty list:', error?.message);
-    return NextResponse.json([]);
+    console.warn('DB connect failed in GET /api/inquiries:', error?.message);
   }
+
+  const storedMessages = getStoreEnquiries();
+  const existingIds = new Set(dbMessages.map((m: any) => String(m._id)));
+  const merged = [...dbMessages, ...storedMessages.filter(m => !existingIds.has(String(m._id)))];
+  return NextResponse.json(merged);
 }
 
 export async function POST(request: Request) {
   try {
-    await connectDB();
     const body = await request.json();
-    const message = await ContactMessage.create({
+    let message: any = null;
+
+    try {
+      await connectDB();
+      message = await ContactMessage.create({
+        ...body,
+        read: false,
+        funnelStep: 1,
+      });
+      message = message.toObject ? message.toObject() : message;
+    } catch (dbErr: any) {
+      console.warn('DB write failed in POST /api/inquiries, persisting to dataStore:', dbErr?.message);
+    }
+
+    const saved = saveStoreEnquiry(message || {
       ...body,
       read: false,
       funnelStep: 1,
@@ -146,7 +167,7 @@ export async function POST(request: Request) {
       // Don't fail the booking if email fails â€” DB already saved
     }
 
-    return NextResponse.json(message, { status: 201 });
+    return NextResponse.json(saved || message, { status: 201 });
   } catch (error: any) {
     console.error('API Error:', error);
     return NextResponse.json({ error: 'Failed to submit inquiry', details: error?.message || String(error) }, { status: 500 });

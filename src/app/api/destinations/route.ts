@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { Destination } from '@/lib/models';
+import { mergeDestinationsWithStore, saveStoreDestination } from '@/lib/dataStore';
 
 export const dynamic = 'force-dynamic';
 
@@ -17,37 +18,36 @@ export async function GET() {
     const { destinationsSeed } = await import('@/data/destinations');
     const existingIds = new Set(destinations.map((d: any) => d.id || d._id));
     const fallback = destinationsSeed.filter((d: any) => !existingIds.has(d.id));
-    destinations = [...destinations, ...fallback];
+    const combined = [...destinations, ...fallback];
+    const merged = mergeDestinationsWithStore(combined);
+
+    return NextResponse.json(merged);
   } catch (e) {
     console.error('Failed to load destinationsSeed:', e);
+    return NextResponse.json(mergeDestinationsWithStore(destinations));
   }
-
-  return NextResponse.json(destinations);
 }
 
 export async function POST(request: Request) {
   try {
-    await connectDB();
     const body = await request.json();
     
     if (!body.id && body.name) {
       body.id = 'dest-' + body.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     }
 
-    const destination = await Destination.create(body);
-    return NextResponse.json(destination, { status: 201 });
-  } catch (error: any) {
-    console.warn('DB write failed in POST /api/destinations, returning simulated item:', error?.message);
+    let created = null;
     try {
-      const body = await request.clone().json();
-      const mockItem = {
-        _id: 'mock-dest-' + Date.now(),
-        id: body.id || ('dest-' + (body.name || 'custom').toLowerCase().replace(/[^a-z0-9]+/g, '-')),
-        ...body,
-      };
-      return NextResponse.json(mockItem, { status: 201 });
-    } catch {
-      return NextResponse.json({ error: 'Failed to create destination', message: error?.message }, { status: 500 });
+      await connectDB();
+      created = await Destination.create(body);
+      created = created.toObject ? created.toObject() : created;
+    } catch (dbErr: any) {
+      console.warn('DB write failed in POST /api/destinations, persisting to dataStore:', dbErr?.message);
     }
+
+    const saved = saveStoreDestination(body.id, created || { _id: 'dest-' + Date.now(), ...body });
+    return NextResponse.json(saved, { status: 201 });
+  } catch (error: any) {
+    return NextResponse.json({ error: 'Failed to create destination', message: error?.message }, { status: 500 });
   }
 }

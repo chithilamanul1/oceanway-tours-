@@ -22,7 +22,11 @@ export default function QuoteFunnel() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await fetch('/api/inquiries', { method: 'POST', body: JSON.stringify(formData) });
+      await fetch('/api/inquiries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
     } catch (error) {
       console.error(error);
     } finally {

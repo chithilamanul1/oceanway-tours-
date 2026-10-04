@@ -4,8 +4,13 @@ import { AUTH_COOKIE_NAME, verifyAuth } from '@/lib/auth';
 import { AdminClient } from './AdminClient';
 import AdminLogin from './AdminLogin';
 import { connectDB } from '@/lib/mongodb';
-import { Destination, Itinerary, BlogPost } from '@/lib/models';
-import mongoose from 'mongoose';
+import { Destination, Itinerary, BlogPost, ContactMessage } from '@/lib/models';
+import {
+  mergeItinerariesWithStore,
+  mergeDestinationsWithStore,
+  mergeBlogPostsWithStore,
+  getStoreEnquiries
+} from '@/lib/dataStore';
 
 export const metadata: Metadata = {
   title: 'Admin Desk | OceanWay Tours',
@@ -30,12 +35,20 @@ export default async function AdminPage() {
     return <AdminLogin />;
   }
 
-  // Fetch real counts from DB for the dashboard, with fallback to seed counts
-  let stats = {
-    destinations: 14,
-    itineraries: 12,
-    posts: 6,
-    enquiries: 0,
+  const { destinationsSeed } = await import('@/data/destinations');
+  const { extraItineraries } = await import('@/data/extraItineraries');
+  const { blogPostsSeed } = await import('@/data/blogPosts');
+
+  const liveItineraries = mergeItinerariesWithStore(extraItineraries).filter((i: any) => !i.id.startsWith('itin-'));
+  const liveDestinations = mergeDestinationsWithStore(destinationsSeed);
+  const livePosts = mergeBlogPostsWithStore(blogPostsSeed);
+  const liveEnquiries = getStoreEnquiries();
+
+  const stats = {
+    destinations: liveDestinations.length,
+    itineraries: liveItineraries.length,
+    posts: livePosts.length,
+    enquiries: liveEnquiries.length,
   };
 
   try {
@@ -46,11 +59,10 @@ export default async function AdminPage() {
     if (itinCount > 0) stats.itineraries = itinCount;
     const postCount = await BlogPost.countDocuments();
     if (postCount > 0) stats.posts = postCount;
-    
-    const Enquiry = mongoose.models.Enquiry || mongoose.model('Enquiry', new mongoose.Schema({}, { strict: false }));
-    stats.enquiries = await Enquiry.countDocuments();
+    const enqCount = await ContactMessage.countDocuments();
+    if (enqCount > 0) stats.enquiries = enqCount;
   } catch (error) {
-    console.error("Failed to fetch admin stats:", error);
+    // Mongo offline - using live dataStore stats
   }
 
   return <AdminClient initialStats={stats} />;

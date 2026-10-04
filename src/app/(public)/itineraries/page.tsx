@@ -34,13 +34,15 @@ export default async function ItinerariesPage() {
   }
 
   const { extraItineraries } = await import('@/data/extraItineraries');
+  const { mergeItinerariesWithStore } = await import('@/lib/dataStore');
   const extra = JSON.parse(JSON.stringify(extraItineraries));
   const existingIds = new Set(itineraries.map((i: any) => i.id));
   const toAdd = extra.filter((i: any) => !existingIds.has(i.id));
-  itineraries = [...itineraries, ...toAdd] as any;
+  const combined = [...itineraries, ...toAdd] as any;
+  const merged = mergeItinerariesWithStore(combined);
 
   // Ensure ONLY the customized packages are shown
-  itineraries = itineraries.filter((i: any) => !i.id.startsWith('itin-'));
+  itineraries = merged.filter((i: any) => !i.id.startsWith('itin-'));
   if (itineraries.length === 0) {
     itineraries = extra;
   }

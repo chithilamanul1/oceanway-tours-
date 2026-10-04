@@ -1,6 +1,9 @@
-﻿import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
+import { reviewsSeed } from '@/data/reviews';
 import mongoose from 'mongoose';
+
+export const dynamic = 'force-dynamic';
 
 const reviewSchema = new mongoose.Schema({
   name: String, origin: String, trip: String,
@@ -15,10 +18,12 @@ export async function GET() {
   try {
     await connectDB();
     const reviews = await Review.find().lean();
-    return NextResponse.json(reviews);
+    if (reviews && reviews.length > 0) {
+      return NextResponse.json(reviews);
+    }
   } catch (error: any) {
-    console.error('API Error:', error);
-    return NextResponse.json({ error: 'Failed to fetch reviews', details: error?.message || String(error) }, { status: 500 });
+    console.warn('DB connect failed in GET /api/reviews, using fallback:', error?.message);
   }
-}
 
+  return NextResponse.json(reviewsSeed);
+}

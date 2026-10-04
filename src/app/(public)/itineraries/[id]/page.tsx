@@ -25,15 +25,18 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  let item = null;
-  try {
-    await connectDB();
-    item = (await Itinerary.findOne({ id: params.id }).lean()) as any;
-  } catch (e) { }
+  const { getStoreItinerary } = await import('@/lib/dataStore');
+  let item: any = getStoreItinerary(params.id);
+  if (!item) {
+    try {
+      await connectDB();
+      item = (await Itinerary.findOne({ id: params.id }).lean()) as any;
+    } catch (e) { }
+  }
 
   if (!item) {
     const { extraItineraries } = await import('@/data/extraItineraries');
-    item = extraItineraries.find(i => i.id === params.id) as any;
+    item = extraItineraries.find((i: any) => i.id === params.id) as any;
   }
 
   if (!item) return { title: 'Not Found' };
@@ -50,12 +53,16 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 }
 
 export default async function ItineraryDetailPage({ params }: { params: { id: string } }) {
-  let itinerary = null;
-  try {
-    await connectDB();
-    itinerary = (await Itinerary.findOne({ id: params.id }).lean()) as any;
-  } catch (error) {
-    console.warn('DB error, falling back to static');
+  const { getStoreItinerary } = await import('@/lib/dataStore');
+  let itinerary: any = getStoreItinerary(params.id);
+
+  if (!itinerary) {
+    try {
+      await connectDB();
+      itinerary = (await Itinerary.findOne({ id: params.id }).lean()) as any;
+    } catch (error) {
+      console.warn('DB error, falling back to static');
+    }
   }
 
   if (!itinerary) {
