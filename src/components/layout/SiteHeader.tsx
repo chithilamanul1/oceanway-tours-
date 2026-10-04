@@ -22,6 +22,7 @@ export default function SiteHeader() {
   const navLinks = [
     { label: 'Holidays & Tours', href: '/itineraries' },
     { label: 'Destinations', href: '/destinations' },
+    { label: 'Gallery', href: '/gallery' },
     { label: 'About us', href: '/about' },
     { label: 'Travel Blog', href: '/journal' },
     { label: 'FAQ', href: '/about#faq' },

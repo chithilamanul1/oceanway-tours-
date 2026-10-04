@@ -154,10 +154,10 @@ export default async function ItineraryDetailPage({ params }: { params: { id: st
           <div>
             <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-xl border border-line bg-sand/60 p-4">
               <div className="flex items-start gap-3">
-                <span className="text-lg">✏️</span>
+                <span className="text-lg">🗺️</span>
                 <div>
-                  <p className="text-sm font-semibold text-forest">Flexible & Editable Daily Plan</p>
-                  <p className="text-xs text-forest/70">Need extra nights, a different hotel tier, or custom excursions? All day plans can be tailored to your requirements.</p>
+                  <p className="text-sm font-semibold text-forest">Tailor-Made Daily Itinerary</p>
+                  <p className="text-xs text-forest/70">Need extra nights, a different hotel tier, or custom excursions? Our destination specialists can adjust every detail to your schedule.</p>
                 </div>
               </div>
               <Link href="/contact" className="shrink-0 text-xs font-bold text-brand hover:underline">

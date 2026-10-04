@@ -532,14 +532,45 @@ export default function DestinationsManager() {
               </div>
 
               <Field label="Image URL">
-                <input
-                  className={inputCls}
-                  placeholder="https://… or /images/destination.jpg"
-                  value={form.image}
-                  onChange={(e) => setField('image', e.target.value)}
-                />
+                <div className="flex gap-2">
+                  <input
+                    className={inputCls}
+                    placeholder="https://… or /images/destination.jpg"
+                    value={form.image}
+                    onChange={(e) => setField('image', e.target.value)}
+                  />
+                  <label className="flex items-center gap-1 bg-brand text-white px-3 py-2 rounded text-xs font-semibold cursor-pointer hover:bg-forest transition-colors shrink-0">
+                    <Plus size={14} /> Upload
+                    <input
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={async (e) => {
+                        const file = e.target.files?.[0];
+                        if (!file) return;
+                        const reader = new FileReader();
+                        reader.onloadend = async () => {
+                          const base64 = reader.result as string;
+                          setField('image', base64);
+                          try {
+                            fetch('/api/media', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({
+                                url: base64,
+                                name: `${form.name || 'Destination'} Main`,
+                                tags: ['Destination', form.tag || 'Sri Lanka'],
+                              }),
+                            }).catch(() => {});
+                          } catch {}
+                        };
+                        reader.readAsDataURL(file);
+                      }}
+                    />
+                  </label>
+                </div>
                 <p className="text-[11px] text-charcoal/40 mt-1">
-                  Absolute URL or a path relative to the /public folder.
+                  Absolute URL, path, or upload directly from your device.
                 </p>
               </Field>
 
@@ -600,12 +631,47 @@ export default function DestinationsManager() {
                       </button>
                     </div>
                   ))}
-                  <button
-                    onClick={addGalleryItem}
-                    className="flex items-center gap-2 border border-dashed border-line px-3 py-2 rounded text-sm text-charcoal/60 hover:border-brand hover:text-brand transition-colors"
-                  >
-                    <Plus size={14} /> Add Gallery Image
-                  </button>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <button
+                      type="button"
+                      onClick={addGalleryItem}
+                      className="flex items-center gap-2 border border-dashed border-line px-3 py-2 rounded text-sm text-charcoal/60 hover:border-brand hover:text-brand transition-colors"
+                    >
+                      <Plus size={14} /> Add Image URL
+                    </button>
+                    <label className="flex items-center gap-2 bg-brand text-white px-3 py-2 rounded text-sm font-medium hover:bg-forest transition-colors cursor-pointer">
+                      <Plus size={14} /> Upload Gallery Photo
+                      <input
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={async (e) => {
+                          const file = e.target.files?.[0];
+                          if (!file) return;
+                          const reader = new FileReader();
+                          reader.onloadend = async () => {
+                            const base64 = reader.result as string;
+                            setForm((prev) => ({
+                              ...prev,
+                              gallery: [...(prev.gallery ?? []), base64],
+                            }));
+                            try {
+                              fetch('/api/media', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                  url: base64,
+                                  name: `${form.name || 'Destination'} Gallery`,
+                                  tags: ['Gallery', form.tag || 'Sri Lanka', form.name || 'Destination'],
+                                }),
+                              }).catch(() => {});
+                            } catch {}
+                          };
+                          reader.readAsDataURL(file);
+                        }}
+                      />
+                    </label>
+                  </div>
                 </div>
               </div>
 

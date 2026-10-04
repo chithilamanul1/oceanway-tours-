@@ -58,7 +58,7 @@ export default function HomeHero() {
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg md:text-xl text-white/90 mb-10 max-w-2xl leading-relaxed font-light drop-shadow-md">
-            Explore extraordinary places, compare curated packages, and uncover tailor-made experiences designed around your travel style. Every journey is 100% customizable and crafted to perfection.
+            Explore extraordinary places, compare curated packages, and uncover tailor-made experiences designed around your travel style. Every journey is thoughtfully crafted to perfection.
           </p>
           
           {/* Action CTAs */}
@@ -84,7 +84,7 @@ export default function HomeHero() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full pt-8 border-t border-white/15 text-white/80 text-xs sm:text-sm">
             <div className="flex items-center justify-center gap-2">
               <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
-              <span>100% Tailored & Editable</span>
+              <span>Handcrafted Private Itineraries</span>
             </div>
             <div className="flex items-center justify-center gap-2">
               <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />

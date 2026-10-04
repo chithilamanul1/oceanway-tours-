@@ -11,6 +11,43 @@ interface MediaItem {
   createdAt: string;
 }
 
+function compressImage(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        let width = img.width;
+        let height = img.height;
+        const maxDim = 1600;
+        if (width > maxDim || height > maxDim) {
+          if (width > height) {
+            height = Math.round((height * maxDim) / width);
+            width = maxDim;
+          } else {
+            width = Math.round((width * maxDim) / height);
+            height = maxDim;
+          }
+        }
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) {
+          resolve(e.target?.result as string);
+          return;
+        }
+        ctx.drawImage(img, 0, 0, width, height);
+        resolve(canvas.toDataURL('image/jpeg', 0.85));
+      };
+      img.onerror = reject;
+      img.src = e.target?.result as string;
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
 export default function MediaLibrary() {
   const [items, setItems] = useState<MediaItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -19,6 +56,7 @@ export default function MediaLibrary() {
   const [newName, setNewName] = useState('');
   const [newTags, setNewTags] = useState('');
   const [saving, setSaving] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState<string | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [filterTag, setFilterTag] = useState('');
 
@@ -48,6 +86,56 @@ export default function MediaLibrary() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+
+    setSaving(true);
+    setUploadStatus(`Uploading ${files.length} image(s)...`);
+
+    const uploadedItems: MediaItem[] = [];
+
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      try {
+        const base64String = await compressImage(file);
+        const res = await fetch('/api/media', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            url: base64String,
+            name: file.name.replace(/\.[^/.]+$/, ''),
+            tags: ['Uploaded', 'Gallery'],
+          }),
+        });
+
+        if (res.ok) {
+          const item = await res.json();
+          uploadedItems.unshift(item);
+        } else {
+          const localItem: MediaItem = {
+            _id: 'local-' + Date.now() + '-' + i,
+            url: base64String,
+            name: file.name.replace(/\.[^/.]+$/, ''),
+            tags: ['Uploaded', 'Gallery'],
+            createdAt: new Date().toISOString(),
+          };
+          uploadedItems.unshift(localItem);
+        }
+      } catch (err) {
+        console.error('Failed to upload file:', file.name, err);
+      }
+    }
+
+    if (uploadedItems.length > 0) {
+      setItems((prev) => [...uploadedItems, ...prev]);
+    }
+
+    setSaving(false);
+    setUploadStatus(null);
+    e.target.value = '';
   };
 
   const handleAdd = async () => {
@@ -128,57 +216,16 @@ export default function MediaLibrary() {
           <p className="text-sm text-charcoal/70">{items.length} images stored. Click an image to copy its URL.</p>
         </div>
         <div className="flex gap-2">
-          <label className="flex items-center gap-2 bg-brand text-white px-4 py-2 rounded font-medium hover:bg-forest transition-colors text-sm cursor-pointer">
-            <Plus size={16} /> Upload Image
+          <label className="flex items-center gap-2 bg-brand text-white px-4 py-2 rounded font-medium hover:bg-forest transition-colors text-sm cursor-pointer disabled:opacity-50">
+            {saving ? <Loader2 className="animate-spin" size={16} /> : <Plus size={16} />}
+            {uploadStatus || 'Upload Images'}
             <input 
               type="file" 
               accept="image/*" 
+              multiple
+              disabled={saving}
               className="hidden" 
-              onChange={async (e) => {
-                const file = e.target.files?.[0];
-                if (!file) return;
-                
-                // Check size (max 2MB for base64 storage)
-                if (file.size > 2 * 1024 * 1024) {
-                  alert('File is too large. Please upload an image under 2MB.');
-                  return;
-                }
-
-                setSaving(true);
-                const reader = new FileReader();
-                reader.onloadend = async () => {
-                  const base64String = reader.result as string;
-                  try {
-                    const res = await fetch('/api/media', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({
-                        url: base64String,
-                        name: file.name,
-                        tags: ['uploaded']
-                      })
-                    });
-                    if (res.ok) {
-                      const item = await res.json();
-                      setItems([item, ...items]);
-                    } else {
-                      const localItem: MediaItem = {
-                        _id: 'local-' + Date.now(),
-                        url: base64String,
-                        name: file.name,
-                        tags: ['uploaded'],
-                        createdAt: new Date().toISOString()
-                      };
-                      setItems([localItem, ...items]);
-                    }
-                  } catch (err) {
-                    console.error(err);
-                  } finally {
-                    setSaving(false);
-                  }
-                };
-                reader.readAsDataURL(file);
-              }}
+              onChange={handleFileUpload}
             />
           </label>
           <button

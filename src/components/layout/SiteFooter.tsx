@@ -74,6 +74,7 @@ export default function SiteFooter() {
             <ul className="space-y-4">
               <li><Link href="/about" className="text-mist/80 hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/itineraries" className="text-mist/80 hover:text-white transition-colors">Holidays & Tours</Link></li>
+              <li><Link href="/gallery" className="text-mist/80 hover:text-white transition-colors">Photo Gallery</Link></li>
               <li><Link href="/journal" className="text-mist/80 hover:text-white transition-colors">Travel Blog</Link></li>
               <li><Link href="/about#faq" className="text-mist/80 hover:text-white transition-colors">FAQ</Link></li>
             </ul>

@@ -168,7 +168,7 @@ export const extraItineraries = [
       "Chauffeur gratuities"
     ],
     "seoTitle": "Family Fun & Cultural Triangle | OceanWay Tours",
-    "seoDescription": "A tailored 8-day family tour of Sri Lanka covering Sigiriya, Kandy, Nuwara Eliya, and Negombo. Fully customizable and editable."
+    "seoDescription": "A tailored 8-day family tour of Sri Lanka covering Sigiriya, Kandy, Nuwara Eliya, and Negombo. Handcrafted by OceanWay Tours destination specialists."
   },
   {
     "id": "off-the-beaten-path-untouched-east",
@@ -426,7 +426,7 @@ export const extraItineraries = [
       "Tips for safari trackers and boatmen"
     ],
     "seoTitle": "Off-the-Beaten-Path & The Untouched East | OceanWay Tours",
-    "seoDescription": "14-Day expedition through Wilpattu, Trincomalee, Pasikudah, and Gal Oya. 100% customizable and editable."
+    "seoDescription": "14-Day expedition through Wilpattu, Trincomalee, Pasikudah, and Gal Oya. Handcrafted by OceanWay Tours destination specialists."
   },
   {
     "id": "romantic-ceylon-honeymoon-escape",
@@ -548,7 +548,7 @@ export const extraItineraries = [
       "Driver tips"
     ],
     "seoTitle": "Romantic Ceylon Honeymoon Escape | OceanWay Tours",
-    "seoDescription": "Intimate 5-day honeymoon escape across Kandy, Nuwara Eliya, and Galle Fort. Fully customizable and editable."
+    "seoDescription": "Intimate 5-day honeymoon escape across Kandy, Nuwara Eliya, and Galle Fort. Handcrafted by OceanWay Tours destination specialists."
   },
   {
     "id": "cool-highlands-luxury-retreat",
@@ -703,7 +703,7 @@ export const extraItineraries = [
       "Driver tips"
     ],
     "seoTitle": "The Cool Highlands & Luxury Retreat | OceanWay Tours",
-    "seoDescription": "7-Day luxury tea highlands retreat staying in colonial heritage resorts. Fully customizable and editable."
+    "seoDescription": "7-Day luxury tea highlands retreat staying in colonial heritage resorts. Handcrafted by OceanWay Tours destination specialists."
   },
   {
     "id": "the-grand-ceylon-explorer",
@@ -961,7 +961,7 @@ export const extraItineraries = [
       "Travel insurance"
     ],
     "seoTitle": "The Grand Ceylon Explorer | OceanWay Tours",
-    "seoDescription": "14-Day comprehensive grand tour of Sri Lanka covering history, tea hills, wildlife safaris, and beaches. Fully customizable."
+    "seoDescription": "14-Day comprehensive grand tour of Sri Lanka covering history, tea hills, wildlife safaris, and beaches. Handcrafted by OceanWay Tours destination specialists."
   },
   {
     "id": "island-pulse-youth-adventure",
@@ -1164,7 +1164,7 @@ export const extraItineraries = [
       "Personal gear"
     ],
     "seoTitle": "The Island Pulse: Surf, Sky & Coastal Nights | OceanWay Tours",
-    "seoDescription": "10-Day active youth trip in Sri Lanka featuring surfing, hiking Ella, and southern beach life. Fully customizable and editable."
+    "seoDescription": "10-Day active youth trip in Sri Lanka featuring surfing, hiking Ella, and southern beach life. Handcrafted by OceanWay Tours destination specialists."
   },
   {
     "id": "ultimate-hiking-adventure-trail",
@@ -1391,7 +1391,7 @@ export const extraItineraries = [
       "Tips for local trail guides"
     ],
     "seoTitle": "The Ultimate Hiking & Adventure Trail | OceanWay Tours",
-    "seoDescription": "12-Day trekking adventure through the Pekoe Trail, Knuckles Mountains, and Horton Plains. Fully customizable and editable."
+    "seoDescription": "12-Day trekking adventure through the Pekoe Trail, Knuckles Mountains, and Horton Plains. Handcrafted by OceanWay Tours destination specialists."
   },
   {
     "id": "wildlife-safari-luxury-coastal",
@@ -1548,7 +1548,7 @@ export const extraItineraries = [
       "Gratuities for driver and safari trackers"
     ],
     "seoTitle": "Wildlife Safari & Luxury Coastal Escape | OceanWay Tours",
-    "seoDescription": "7-Day big game leopard safaris and luxury beach relaxation in Sri Lanka. Fully customizable and editable."
+    "seoDescription": "7-Day big game leopard safaris and luxury beach relaxation in Sri Lanka. Handcrafted by OceanWay Tours destination specialists."
   },
   {
     "id": "3-day-the-essence-of-bahrain",
@@ -1639,7 +1639,7 @@ export const extraItineraries = [
       "Personal expenses and gratuities"
     ],
     "seoTitle": "3-Day The Essence of Bahrain | OceanWay Tours",
-    "seoDescription": "Discover Bahrain in 3 days: Al Fateh Mosque, Bahrain Fort, National Museum, and Manama Souq. Fully customizable and editable."
+    "seoDescription": "Discover Bahrain in 3 days: Al Fateh Mosque, Bahrain Fort, National Museum, and Manama Souq. Handcrafted by OceanWay Tours destination specialists."
   },
   {
     "id": "4-day-ultimate-bahrain-discovery",
@@ -1747,7 +1747,7 @@ export const extraItineraries = [
       "Tips and porterage"
     ],
     "seoTitle": "4-Day Ultimate Bahrain Discovery | OceanWay Tours",
-    "seoDescription": "4-Day tour of Bahrain covering Manama city sights, A'ali pottery, and the desert Tree of Life. Fully customizable."
+    "seoDescription": "4-Day tour of Bahrain covering Manama city sights, A'ali pottery, and the desert Tree of Life. Handcrafted by OceanWay Tours destination specialists."
   },
   {
     "id": "5-day-pearls-of-bahrain",
@@ -1874,7 +1874,7 @@ export const extraItineraries = [
       "Personal expenses and gratuities"
     ],
     "seoTitle": "5-Day Pearls of Bahrain – Heritage & City Tour | OceanWay Tours",
-    "seoDescription": "5-Day in-depth tour of Bahrain featuring the UNESCO Pearling Path, Manama, and desert highlights. 100% customizable."
+    "seoDescription": "5-Day in-depth tour of Bahrain featuring the UNESCO Pearling Path, Manama, and desert highlights. Handcrafted by OceanWay Tours destination specialists."
   },
   {
     "id": "bahrain-grand-prix-2027",
@@ -2000,6 +2000,6 @@ export const extraItineraries = [
       "Travel insurance"
     ],
     "seoTitle": "Formula 1 Bahrain Grand Prix 2027 Experience | OceanWay Tours",
-    "seoDescription": "Official 5-Day Bahrain F1 Grand Prix package: Hotel stay, 3-day Grandstand tickets, and circuit transfers. Fully customizable."
+    "seoDescription": "Official 5-Day Bahrain F1 Grand Prix package: Hotel stay, 3-day Grandstand tickets, and circuit transfers. Handcrafted by OceanWay Tours destination specialists."
   }
 ];

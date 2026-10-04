@@ -6,10 +6,12 @@ interface StoreData {
   destinations: Record<string, any>;
   blogs: Record<string, any>;
   enquiries: Record<string, any>;
+  media: Record<string, any>;
   deletedItineraries: string[];
   deletedDestinations: string[];
   deletedBlogs: string[];
   deletedEnquiries: string[];
+  deletedMedia: string[];
 }
 
 declare global {
@@ -78,10 +80,12 @@ function getInitialData(): StoreData {
     destinations: {},
     blogs: {},
     enquiries: {},
+    media: {},
     deletedItineraries: [],
     deletedDestinations: [],
     deletedBlogs: [],
     deletedEnquiries: [],
+    deletedMedia: [],
   };
 
   for (const item of SEED_ENQUIRIES) {
@@ -98,10 +102,12 @@ function getInitialData(): StoreData {
           destinations: parsed.destinations || {},
           blogs: parsed.blogs || {},
           enquiries: { ...defaultData.enquiries, ...(parsed.enquiries || {}) },
+          media: parsed.media || {},
           deletedItineraries: parsed.deletedItineraries || [],
           deletedDestinations: parsed.deletedDestinations || [],
           deletedBlogs: parsed.deletedBlogs || [],
           deletedEnquiries: parsed.deletedEnquiries || [],
+          deletedMedia: parsed.deletedMedia || [],
         };
         return global.__globalStoreData;
       }
@@ -336,3 +342,74 @@ export function deleteStoreEnquiry(id: string) {
   }
   persistData(store);
 }
+
+// ─── MEDIA ───────────────────────────────────────────────────────────────────
+
+export function getStoreMedia(id: string) {
+  const store = getInitialData();
+  if (store.deletedMedia.includes(id)) return null;
+  return store.media[id] || null;
+}
+
+export function saveStoreMedia(data: any): any {
+  const store = getInitialData();
+  const cleanId = data._id || data.id || ('media-' + Date.now());
+  const item = {
+    _id: cleanId,
+    id: cleanId,
+    url: data.url,
+    name: data.name || 'Image',
+    tags: Array.isArray(data.tags) ? data.tags : [],
+    createdAt: data.createdAt || new Date().toISOString(),
+    ...data,
+  };
+  item._id = cleanId;
+  item.id = cleanId;
+
+  store.media[cleanId] = item;
+  store.deletedMedia = store.deletedMedia.filter(dId => dId !== cleanId);
+  persistData(store);
+  return item;
+}
+
+export function deleteStoreMedia(id: string) {
+  const store = getInitialData();
+  delete store.media[id];
+  if (!store.deletedMedia.includes(id)) {
+    store.deletedMedia.push(id);
+  }
+  persistData(store);
+}
+
+export function getStoreAllMedia(): any[] {
+  const store = getInitialData();
+  const deletedSet = new Set(store.deletedMedia);
+  const list = Object.values(store.media).filter(m => !deletedSet.has(m._id) && !deletedSet.has(m.id));
+  return list.sort((a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime());
+}
+
+export function mergeMediaWithStore(baseList: any[] = []): any[] {
+  const store = getInitialData();
+  const deletedSet = new Set(store.deletedMedia);
+  const overrides = store.media;
+
+  const map = new Map<string, any>();
+
+  for (const item of baseList) {
+    const itemId = item._id || item.id;
+    if (itemId && !deletedSet.has(itemId)) {
+      map.set(itemId, item);
+    }
+  }
+
+  for (const [id, item] of Object.entries(overrides)) {
+    if (!deletedSet.has(id)) {
+      map.set(id, { ...(map.get(id) || {}), ...item });
+    }
+  }
+
+  return Array.from(map.values()).sort(
+    (a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime()
+  );
+}
+
