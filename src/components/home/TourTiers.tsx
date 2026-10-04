@@ -30,8 +30,8 @@ export default function TourTiers() {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-6">
+    <section className="py-12 md:py-24 bg-white overflow-hidden w-full max-w-full">
+      <div className="container mx-auto px-4 sm:px-6">
         <SectionIntro
           eyebrow="Travel Styles"
           title="Ways to Travel With Us"

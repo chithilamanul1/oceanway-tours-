@@ -12,10 +12,10 @@ interface ScrollRevealProps {
 
 export default function ScrollReveal({ children, delay = 0, direction = 'up', className = '' }: ScrollRevealProps) {
   const directions = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { x: 40, y: 0 },
-    right: { x: -40, y: 0 },
+    up: { y: 25, x: 0 },
+    down: { y: -25, x: 0 },
+    left: { x: 15, y: 0 },
+    right: { x: -15, y: 0 },
     none: { x: 0, y: 0 }
   };
 
@@ -30,13 +30,13 @@ export default function ScrollReveal({ children, delay = 0, direction = 'up', cl
         x: 0, 
         y: 0 
       }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "0px" }}
       transition={{ 
-        duration: 0.7, 
+        duration: 0.6, 
         delay: delay, 
         ease: [0.21, 0.47, 0.32, 0.98] 
       }}
-      className={className}
+      className={`max-w-full ${className}`}
     >
       {children}
     </motion.div>

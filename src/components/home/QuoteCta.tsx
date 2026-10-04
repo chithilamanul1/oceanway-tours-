@@ -4,8 +4,8 @@ import { ArrowRight } from 'lucide-react';
 
 export default function QuoteCta() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="py-12 md:py-24 bg-white relative overflow-hidden w-full max-w-full">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="bg-brand rounded-[32px] overflow-hidden relative">
           <div className="absolute inset-0">
             <img 

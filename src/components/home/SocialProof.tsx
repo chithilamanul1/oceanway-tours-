@@ -7,9 +7,9 @@ import ReviewFilter from '@/components/ui/ReviewFilter';
 
 export default function SocialProof() {
   return (
-    <section className="bg-white border-y border-line py-8">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+    <section className="bg-white border-y border-line py-6 sm:py-8 w-full max-w-full overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-16">
           
           <div className="flex items-center gap-4">
             <div className="flex -space-x-4">

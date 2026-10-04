@@ -5,10 +5,10 @@ import { Star, Quote } from 'lucide-react';
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-forest relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-brand/10 -skew-x-12 translate-x-32" />
+    <section className="py-12 md:py-24 bg-forest relative overflow-hidden w-full max-w-full">
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-brand/10 -skew-x-12 translate-x-32 pointer-events-none" />
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mx-auto max-w-3xl mb-16">
           <span className="inline-block py-1 px-3 rounded-full bg-brand/20 text-brand text-sm font-semibold tracking-wider uppercase mb-4">
             Testimonials

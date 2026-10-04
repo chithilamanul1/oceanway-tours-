@@ -74,9 +74,9 @@ export default async function Home() {
                 help—from budget holiday packages to luxury private travel.
               </p>
             </SectionIntro>
-            <dl className="grid grid-cols-2 gap-x-6 gap-y-6 border-l-2 border-brand pl-6">
+            <dl className="grid grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-4 sm:gap-y-6 border-l-2 border-brand pl-4 sm:pl-6">
               {stats.map((stat, i) => (
-                <ScrollReveal key={stat.label} delay={0.1 * i} direction="left">
+                <ScrollReveal key={stat.label} delay={0.1 * i} direction="up">
                   <dt className="text-xs text-charcoal/70">{stat.label}</dt>
                   <dd className="text-2xl font-bold text-ink">{stat.value}</dd>
                 </ScrollReveal>
@@ -87,8 +87,8 @@ export default async function Home() {
       </section>
 
       {/* Tour Packages */}
-      <section className="px-4 pb-20 sm:px-6 lg:px-10 overflow-hidden">
-        <div className="mx-auto max-w-7xl">
+      <section className="px-4 pb-20 sm:px-6 lg:px-10 overflow-hidden w-full max-w-full">
+        <div className="mx-auto max-w-7xl w-full">
           <ScrollReveal direction="up">
             <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
               <SectionIntro title="Best-Selling Trip Packages" align="left">
@@ -103,9 +103,9 @@ export default async function Home() {
               </Link>
             </div>
           </ScrollReveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
             {itineraries.slice(0, 4).map((itinerary, i) => (
-              <ScrollReveal key={itinerary.id} delay={0.1 * i}>
+              <ScrollReveal key={itinerary.id} delay={0.1 * i} direction="up" className="w-full">
                 <ItineraryCard itinerary={itinerary} />
               </ScrollReveal>
             ))}
@@ -120,8 +120,8 @@ export default async function Home() {
       </ScrollReveal>
 
       {/* Top Destinations */}
-      <section className="px-4 py-20 sm:px-6 lg:px-10 overflow-hidden">
-        <div className="mx-auto max-w-7xl">
+      <section className="px-4 py-20 sm:px-6 lg:px-10 overflow-hidden w-full max-w-full">
+        <div className="mx-auto max-w-7xl w-full">
           <ScrollReveal direction="up">
             <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
               <SectionIntro title="Top Destinations" align="left">
@@ -136,9 +136,9 @@ export default async function Home() {
               </Link>
             </div>
           </ScrollReveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {destinations.slice(0, 6).map((destination, i) => (
-              <ScrollReveal key={destination.id} delay={0.1 * i}>
+              <ScrollReveal key={destination.id} delay={0.1 * i} direction="up" className="w-full">
                 <DestinationCard destination={destination} />
               </ScrollReveal>
             ))}

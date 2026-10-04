@@ -31,26 +31,26 @@ export default function HomeHero() {
         <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/95 via-black/75 to-black/50 z-10" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-20 flex flex-col items-center justify-center text-center max-w-4xl py-8">
+      <div className="container mx-auto px-4 sm:px-6 relative z-20 flex flex-col items-center justify-center text-center max-w-4xl py-6 sm:py-8 w-full max-w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center"
+          className="flex flex-col items-center w-full"
         >
           {/* Glass Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 shadow-lg">
-            <span className="bg-brand text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 sm:mb-8 shadow-lg max-w-full">
+            <span className="bg-brand text-white text-[11px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 rounded-full uppercase tracking-wider shrink-0">
               Bespoke
             </span>
-            <span className="text-white text-sm pr-2 font-medium">
+            <span className="text-white text-xs sm:text-sm pr-2 font-medium truncate">
               Travel Beyond Expectations
             </span>
           </div>
 
           {/* Main Title */}
           <h1 
-            className="font-viney text-white font-normal mb-6 text-[68px] sm:text-[95px] md:text-[120px] lg:text-[135px] leading-[0.88] tracking-normal drop-shadow-2xl"
+            className="font-viney text-white font-normal mb-6 text-[52px] sm:text-[85px] md:text-[115px] lg:text-[135px] leading-[0.9] tracking-normal drop-shadow-2xl max-w-full"
             style={{ letterSpacing: '0' }}
           >
             Travel Beyond<br />the Ordinary
