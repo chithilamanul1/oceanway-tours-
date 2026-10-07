@@ -19,17 +19,22 @@ if (!global.mongooseCache) {
   global.mongooseCache = cached;
 }
 
+const VALID_MONGODB_URI = 'mongodb://chithila:chithila123@187.77.128.167:27017/oceanway?authSource=admin';
+
 export async function connectDB(): Promise<typeof mongoose> {
-  const uri = process.env.MONGODB_URI;
-  if (!uri) {
-    throw new Error('Please define the MONGODB_URI environment variable inside Vercel or .env.local');
+  let uri = process.env.MONGODB_URI;
+  if (!uri || uri.includes('chithilamanul1')) {
+    uri = VALID_MONGODB_URI;
   }
 
-  if (cached.conn) return cached.conn;
+  if (cached.conn && mongoose.connection.readyState === 1) {
+    return cached.conn;
+  }
 
   if (!cached.promise) {
     cached.promise = mongoose.connect(uri, {
       bufferCommands: false,
+      serverSelectionTimeoutMS: 5000,
     });
   }
 
@@ -37,6 +42,7 @@ export async function connectDB(): Promise<typeof mongoose> {
     cached.conn = await cached.promise;
   } catch (e) {
     cached.promise = null;
+    cached.conn = null;
     throw e;
   }
 

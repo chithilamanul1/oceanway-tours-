@@ -36,11 +36,16 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Image URL or data is required' }, { status: 400 });
     }
 
+    const { _id, ...cleanBody } = body;
     let savedItem: any = null;
 
     try {
       await connectDB();
-      savedItem = await MediaItem.create(body);
+      savedItem = await MediaItem.create({
+        url: cleanBody.url,
+        name: cleanBody.name || 'Image',
+        tags: Array.isArray(cleanBody.tags) ? cleanBody.tags : [],
+      });
       if (savedItem && savedItem.toObject) {
         savedItem = savedItem.toObject();
       }
@@ -81,8 +86,13 @@ export async function DELETE(request: Request) {
     if (!id) return NextResponse.json({ error: 'ID required' }, { status: 400 });
 
     try {
+      const mongoose = await import('mongoose');
       await connectDB();
-      await MediaItem.findByIdAndDelete(id);
+      if (mongoose.isValidObjectId(id) && /^[0-9a-fA-F]{24}$/.test(String(id))) {
+        await MediaItem.findByIdAndDelete(id);
+      } else {
+        await MediaItem.findOneAndDelete({ $or: [{ url: id }, { name: id }] });
+      }
     } catch (error: any) {
       console.warn('DB delete failed, deleting from local store:', error?.message);
     }

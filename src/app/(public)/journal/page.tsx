@@ -9,18 +9,31 @@ export const metadata: Metadata = {
   description: 'Destination guides, planning advice, and inspiration from the OceanWay Tours team.',
 };
 
-export const revalidate = 60; // ISR every 60s
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
 
 export default async function JournalPage() {
   let posts: any[] = [];
 
   try {
     await connectDB();
-    const dbPosts = await BlogPostModel.find().lean();
-    posts = JSON.parse(JSON.stringify(dbPosts));
+    const dbPosts = await BlogPostModel.find().sort({ createdAt: -1 }).lean();
+    if (dbPosts && dbPosts.length > 0) {
+      posts = JSON.parse(JSON.stringify(dbPosts));
+    }
   } catch (error) {
     console.error('MongoDB fetch failed on Journal page', error);
   }
+
+  if (!posts || posts.length === 0) {
+    try {
+      const { blogPostsSeed } = await import('@/data/blogPosts');
+      posts = JSON.parse(JSON.stringify(blogPostsSeed));
+    } catch (e) {}
+  }
+
+  const { mergeBlogPostsWithStore } = await import('@/lib/dataStore');
+  posts = mergeBlogPostsWithStore(posts);
 
   return (
     <>

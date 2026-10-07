@@ -37,7 +37,7 @@ export default function EnquiriesViewer() {
 
   const fetchEnquiries = async () => {
     try {
-      const res = await fetch('/api/inquiries');
+      const res = await fetch('/api/inquiries', { cache: 'no-store' });
       if (res.ok) {
         const data = await res.json();
         setEnquiries(data);

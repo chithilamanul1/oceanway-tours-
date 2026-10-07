@@ -205,7 +205,7 @@ export default function ItinerariesManager() {
   const fetchItineraries = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/itineraries');
+      const res = await fetch('/api/itineraries', { cache: 'no-store' });
       if (res.ok) {
         const data = await res.json();
         setItineraries(Array.isArray(data) ? data : (data.itineraries ?? []));

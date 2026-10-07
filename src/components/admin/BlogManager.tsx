@@ -105,7 +105,7 @@ export default function BlogManager() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('/api/blog');
+      const res = await fetch('/api/blog', { cache: 'no-store' });
       if (!res.ok) throw new Error(`Failed to fetch posts (${res.status})`);
       const data = await res.json();
       setPosts(Array.isArray(data) ? data : data.posts ?? []);

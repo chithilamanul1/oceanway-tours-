@@ -176,7 +176,7 @@ export default function DestinationsManager() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('/api/destinations');
+      const res = await fetch('/api/destinations', { cache: 'no-store' });
       if (!res.ok) throw new Error(`Server responded with ${res.status}`);
       const data = await res.json();
       setDestinations(Array.isArray(data) ? data : data.destinations ?? []);

@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   description: 'Explore our best-selling trip packages — Tailor-Made Tours, Small Group Adventures, and Fixed Holiday Getaways across Sri Lanka, Saudi Arabia, and Bahrain.',
 };
 
-export const revalidate = 60; // ISR every 60s
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
 
 export default async function ItinerariesPage() {
   let itineraries: any[] = [];

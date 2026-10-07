@@ -38,7 +38,7 @@ export default function GalleryViewer({ initialPhotos }: GalleryViewerProps) {
   useEffect(() => {
     async function loadFreshPhotos() {
       try {
-        const res = await fetch('/api/media');
+        const res = await fetch('/api/media', { cache: 'no-store' });
         if (res.ok) {
           const data = await res.json();
           if (Array.isArray(data) && data.length > 0) {

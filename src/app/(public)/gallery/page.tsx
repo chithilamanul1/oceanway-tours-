@@ -24,7 +24,8 @@ export const metadata: Metadata = {
   },
 };
 
-export const revalidate = 60; // Refresh every 60s
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
 
 export default async function GalleryPage() {
   let dbItems: any[] = [];

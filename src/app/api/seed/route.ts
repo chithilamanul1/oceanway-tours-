@@ -22,7 +22,8 @@ export async function GET() {
     await Itinerary.insertMany(extraItineraries);
 
     await MediaItem.deleteMany({});
-    await MediaItem.insertMany(mediaSeed);
+    const cleanMediaSeed = mediaSeed.map(({ _id, ...rest }) => rest);
+    await MediaItem.insertMany(cleanMediaSeed);
 
     return NextResponse.json({ success: true, message: 'Synced clean DB with all collections' });
   } catch (e: any) {

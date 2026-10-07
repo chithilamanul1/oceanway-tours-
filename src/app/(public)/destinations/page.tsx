@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 import { connectDB } from '@/lib/mongodb';
 import { Destination as DestinationModel } from '@/lib/models';
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
 
 export default async function DestinationsPage() {
   let destinations = destinationsSeed;
@@ -19,10 +20,15 @@ export default async function DestinationsPage() {
   try {
     await connectDB();
     const dbDestinations = await DestinationModel.find().lean();
-    if (dbDestinations.length > 0) destinations = JSON.parse(JSON.stringify(dbDestinations));
+    if (dbDestinations && dbDestinations.length > 0) {
+      destinations = JSON.parse(JSON.stringify(dbDestinations));
+    }
   } catch (error) {
     console.error('MongoDB fetch failed, using seed data.', error);
   }
+
+  const { mergeDestinationsWithStore } = await import('@/lib/dataStore');
+  destinations = mergeDestinationsWithStore(destinations);
 
   return (
     <>
