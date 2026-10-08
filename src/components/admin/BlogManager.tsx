@@ -17,6 +17,7 @@ import {
   FileText,
   Search,
 } from 'lucide-react';
+import { compressImage } from '@/utils/imageCompressor';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -654,13 +655,42 @@ export default function BlogManager() {
             </h3>
             <div>
               <FieldLabel>Image URL</FieldLabel>
-              <input
-                type="text"
-                value={form.image}
-                onChange={(e) => setField('image', e.target.value)}
-                placeholder="https://..."
-                className="w-full border border-line p-2 rounded text-sm focus:outline-none focus:ring-1 focus:ring-brand"
-              />
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={form.image}
+                  onChange={(e) => setField('image', e.target.value)}
+                  placeholder="https://..."
+                  className="w-full border border-line p-2 rounded text-sm focus:outline-none focus:ring-1 focus:ring-brand"
+                />
+                <label className="flex items-center gap-1 bg-brand text-white px-3 py-2 rounded text-xs font-semibold cursor-pointer hover:bg-forest transition-colors shrink-0">
+                  <PlusCircle size={14} /> Upload
+                  <input
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={async (e) => {
+                      const file = e.target.files?.[0];
+                      if (!file) return;
+                      try {
+                        const base64 = await compressImage(file);
+                        setField('image', base64);
+                        fetch('/api/media', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({
+                            url: base64,
+                            name: `${form.title || 'Blog Post'} Cover`,
+                            tags: ['Blog', form.category || 'Article'],
+                          }),
+                        }).catch(() => {});
+                      } catch (err) {
+                        console.error('Image upload failed:', err);
+                      }
+                    }}
+                  />
+                </label>
+              </div>
             </div>
 
             {/* Live preview */}

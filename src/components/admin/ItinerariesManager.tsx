@@ -6,6 +6,7 @@ import {
   ChevronDown, ChevronUp, CalendarDays, Users, DollarSign,
   MapPin, LayoutList, ArrowLeft, CheckCircle2, AlertCircle,
 } from 'lucide-react';
+import { compressImage } from '@/utils/imageCompressor';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -389,8 +390,37 @@ export default function ItinerariesManager() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
                 <div>
                   <label className={labelCls}>Image URL</label>
-                  <input className={inputCls} value={form.image} onChange={e => setField('image', e.target.value)} placeholder="https://... or /images/hero.jpg" />
-                  <p className="text-xs text-charcoal/60 mt-1">Paste a full URL or a public path.</p>
+                  <div className="flex gap-2">
+                    <input className={inputCls} value={form.image} onChange={e => setField('image', e.target.value)} placeholder="https://... or /images/hero.jpg" />
+                    <label className="flex items-center gap-1 bg-brand text-white px-3 py-2 rounded text-xs font-semibold cursor-pointer hover:bg-forest transition-colors shrink-0">
+                      <Plus size={14} /> Upload
+                      <input
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={async (e) => {
+                          const file = e.target.files?.[0];
+                          if (!file) return;
+                          try {
+                            const base64 = await compressImage(file);
+                            setField('image', base64);
+                            fetch('/api/media', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({
+                                url: base64,
+                                name: `${form.title || 'Itinerary'} Cover`,
+                                tags: ['Itinerary', form.destinationName || 'Tour'],
+                              }),
+                            }).catch(() => {});
+                          } catch (err) {
+                            console.error('Image upload failed:', err);
+                          }
+                        }}
+                      />
+                    </label>
+                  </div>
+                  <p className="text-xs text-charcoal/60 mt-1">Paste a full URL or upload directly from your device.</p>
                 </div>
                 <div className="flex items-center justify-center border border-dashed border-line rounded-lg h-36 bg-sand/30 overflow-hidden">
                   {form.image ? (

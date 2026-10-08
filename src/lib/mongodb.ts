@@ -31,10 +31,16 @@ export async function connectDB(): Promise<typeof mongoose> {
     return cached.conn;
   }
 
+  if (mongoose.connection.readyState !== 1) {
+    cached.promise = null;
+    cached.conn = null;
+  }
+
   if (!cached.promise) {
     cached.promise = mongoose.connect(uri, {
       bufferCommands: false,
-      serverSelectionTimeoutMS: 5000,
+      serverSelectionTimeoutMS: 8000,
+      socketTimeoutMS: 45000,
     });
   }
 

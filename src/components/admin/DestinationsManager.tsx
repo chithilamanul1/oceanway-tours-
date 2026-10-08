@@ -13,6 +13,7 @@ import {
   ChevronLeft,
   GalleryHorizontal,
 } from 'lucide-react';
+import { compressImage } from '@/utils/imageCompressor';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -548,23 +549,21 @@ export default function DestinationsManager() {
                       onChange={async (e) => {
                         const file = e.target.files?.[0];
                         if (!file) return;
-                        const reader = new FileReader();
-                        reader.onloadend = async () => {
-                          const base64 = reader.result as string;
+                        try {
+                          const base64 = await compressImage(file);
                           setField('image', base64);
-                          try {
-                            fetch('/api/media', {
-                              method: 'POST',
-                              headers: { 'Content-Type': 'application/json' },
-                              body: JSON.stringify({
-                                url: base64,
-                                name: `${form.name || 'Destination'} Main`,
-                                tags: ['Destination', form.tag || 'Sri Lanka'],
-                              }),
-                            }).catch(() => {});
-                          } catch {}
-                        };
-                        reader.readAsDataURL(file);
+                          fetch('/api/media', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                              url: base64,
+                              name: `${form.name || 'Destination'} Main`,
+                              tags: ['Destination', form.tag || 'Sri Lanka'],
+                            }),
+                          }).catch(() => {});
+                        } catch (err) {
+                          console.error('Image compression failed:', err);
+                        }
                       }}
                     />
                   </label>
@@ -648,26 +647,24 @@ export default function DestinationsManager() {
                         onChange={async (e) => {
                           const file = e.target.files?.[0];
                           if (!file) return;
-                          const reader = new FileReader();
-                          reader.onloadend = async () => {
-                            const base64 = reader.result as string;
+                          try {
+                            const base64 = await compressImage(file);
                             setForm((prev) => ({
                               ...prev,
                               gallery: [...(prev.gallery ?? []), base64],
                             }));
-                            try {
-                              fetch('/api/media', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({
-                                  url: base64,
-                                  name: `${form.name || 'Destination'} Gallery`,
-                                  tags: ['Gallery', form.tag || 'Sri Lanka', form.name || 'Destination'],
-                                }),
-                              }).catch(() => {});
-                            } catch {}
-                          };
-                          reader.readAsDataURL(file);
+                            fetch('/api/media', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({
+                                url: base64,
+                                name: `${form.name || 'Destination'} Gallery`,
+                                tags: ['Gallery', form.tag || 'Sri Lanka', form.name || 'Destination'],
+                              }),
+                            }).catch(() => {});
+                          } catch (err) {
+                            console.error('Gallery image compression failed:', err);
+                          }
                         }}
                       />
                     </label>
