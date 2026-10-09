@@ -3,7 +3,6 @@ import { connectDB } from '@/lib/mongodb';
 import { ContactMessage } from '@/lib/models';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 import { getStoreEnquiries, saveStoreEnquiry } from '@/lib/dataStore';
 
@@ -47,21 +46,23 @@ export async function POST(request: Request) {
       funnelStep: 1,
     });
 
-    // Send beautiful branded email via Resend
-    try {
-      const submittedAt = new Date().toLocaleString('en-US', {
-        timeZone: 'Asia/Colombo',
-        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-        hour: '2-digit', minute: '2-digit'
-      });
+    // Send beautiful branded email via Resend if configured
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        const submittedAt = new Date().toLocaleString('en-US', {
+          timeZone: 'Asia/Colombo',
+          weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+          hour: '2-digit', minute: '2-digit'
+        });
 
-      const whatsappNumber = body.phone ? body.phone.replace(/[^0-9]/g, '') : null;
+        const whatsappNumber = body.phone ? body.phone.replace(/[^0-9]/g, '') : null;
 
-      await resend.emails.send({
-        from: 'bookings@updates.oceanwaytours.com',
-        to: 'inquires@oceanwaytours.com',
-        replyTo: body.email,
-        subject: `âœˆï¸ New Booking Inquiry from ${body.name} â€” OceanWay Tours`,
+        await resend.emails.send({
+          from: 'bookings@updates.oceanwaytours.com',
+          to: 'hello@oceanwaytours.com',
+          replyTo: body.email,
+          subject: `✈️ New Booking Inquiry from ${body.name} — OceanWay Tours`,
         html: `<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/></head>
@@ -164,8 +165,9 @@ export async function POST(request: Request) {
       });
     } catch (emailError) {
       console.error("Failed to send email:", emailError);
-      // Don't fail the booking if email fails â€” DB already saved
+      // Don't fail the booking if email fails — DB already saved
     }
+  }
 
     return NextResponse.json(saved || message, { status: 201 });
   } catch (error: any) {
