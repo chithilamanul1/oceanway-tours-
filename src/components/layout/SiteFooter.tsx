@@ -16,7 +16,16 @@ export default function SiteFooter() {
             <p className="text-mist/80 text-sm leading-relaxed">
               Crafting unforgettable journeys with deep local knowledge, exceptional service, and a passion for authentic travel experiences.
             </p>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
+              <a 
+                href={contactInfo.tripadvisor} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                title="OceanWay Tours on TripAdvisor" 
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#00AF87] transition-colors p-2 text-white"
+              >
+                <img src="/tripadvisor-logo.png" alt="TripAdvisor" className="w-5 h-5 object-contain" />
+              </a>
               <a 
                 href={contactInfo.googleBusiness} 
                 target="_blank" 

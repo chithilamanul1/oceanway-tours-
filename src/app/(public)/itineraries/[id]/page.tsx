@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, ArrowUpRight, CalendarDays, Check, Clock3, Mountain, UsersRound } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, CalendarDays, Check, Clock3, Mountain, UsersRound, Tag } from 'lucide-react';
 import DayByDay from '@/components/itinerary/DayByDay';
+import PriceCalculator from '@/components/itinerary/PriceCalculator';
 import { connectDB } from '@/lib/mongodb';
 import { Itinerary } from '@/lib/models';
 import type { Metadata } from 'next';
@@ -127,6 +128,13 @@ export default async function ItineraryDetailPage({ params }: { params: { id: st
                   <p className="font-semibold">{itinerary.season}</p>
                 </div>
               </div>
+              <div className="flex items-center gap-3">
+                <Tag className="text-terracotta" size={24} />
+                <div>
+                  <p className="text-xs font-medium text-canvas/60">Starting Price</p>
+                  <p className="font-semibold">${itinerary.price} <span className="text-xs font-normal text-canvas/70">/ person</span></p>
+                </div>
+              </div>
             </div>
 
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -196,34 +204,13 @@ export default async function ItineraryDetailPage({ params }: { params: { id: st
               </div>
             )}
 
-            <div className="rounded-2xl bg-sand p-8">
-              <p className="text-sm font-semibold uppercase tracking-wider text-forest">
-                From
-              </p>
-              <p className="mt-2 font-display text-4xl text-brand">
-                ${itinerary.price}
-                <span className="text-lg text-forest/60"> / person</span>
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-forest/70">
-                Prices are subject to change based on seasonality, group size, and specific accommodation choices.
-              </p>
-
-              <div className="mt-6 rounded-xl border border-emerald-300/80 bg-emerald-50 p-4 text-emerald-950">
-                <p className="text-xs font-bold uppercase tracking-wider text-emerald-800">
-                  ✨ 100% Tailored to You
-                </p>
-                <p className="mt-1.5 text-xs leading-relaxed text-emerald-900/80">
-                  <strong>Note:</strong> Every day, hotel, activity, and route in this itinerary can be fully edited and customized to fit your specific schedule, preferences, and budget.
-                </p>
-              </div>
-
-              <Link
-                href="/contact"
-                className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-forest px-6 py-4 text-sm font-semibold text-canvas transition-colors hover:bg-brand"
-              >
-                Plan & Customize Trip
-              </Link>
-            </div>
+            <PriceCalculator
+              basePrice={itinerary.price}
+              itineraryId={itinerary.id}
+              itineraryTitle={itinerary.title}
+              destinationName={itinerary.destinationName}
+              duration={itinerary.duration}
+            />
           </div>
         </div>
       </section>

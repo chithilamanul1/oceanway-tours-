@@ -55,7 +55,10 @@ export default function ItineraryCard({ itinerary }: ItineraryCardProps) {
         <div className="flex items-center justify-between gap-2 mt-auto pt-1">
           <div className="shrink-0">
             <span className="block text-[10px] sm:text-xs text-forest/60 uppercase tracking-wider">From</span>
-            <span className="text-base sm:text-xl font-bold text-forest">${itinerary.price}</span>
+            <div className="flex items-baseline gap-1">
+              <span className="text-base sm:text-xl font-bold text-forest">${itinerary.price}</span>
+              <span className="text-[11px] sm:text-xs text-forest/60 font-medium">/ person</span>
+            </div>
           </div>
           <Link 
             href={`/itineraries/${itinerary.id}`}

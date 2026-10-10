@@ -4,6 +4,7 @@ export const contactInfo = {
   whatsapp: '94763634022',
   address: 'Oceanway Tours (Pvt) Ltd, Negombo, Sri Lanka',
   hours: 'Available 24/7',
+  tripadvisor: 'https://www.tripadvisor.com/Attraction_Review-g946550-d34681299-Reviews-Oceanway_Tours_Pvt_Ltd-Katana_Western_Province.html',
   googleBusiness: 'https://share.google/S6DsIzcQvoLdH3rYU',
   googleReviewsUrl: 'https://share.google/S6DsIzcQvoLdH3rYU',
   facebook: 'https://www.facebook.com/share/1DFNG1xuyq/',
@@ -12,6 +13,7 @@ export const contactInfo = {
 };
 
 export const socialLinks = {
+  tripadvisor: 'https://www.tripadvisor.com/Attraction_Review-g946550-d34681299-Reviews-Oceanway_Tours_Pvt_Ltd-Katana_Western_Province.html',
   facebook: 'https://www.facebook.com/share/1DFNG1xuyq/',
   linkedin: 'https://www.linkedin.com/company/oceanway-tours/',
   instagram: 'https://www.instagram.com/oceanwaytours',

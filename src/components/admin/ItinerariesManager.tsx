@@ -357,7 +357,7 @@ export default function ItinerariesManager() {
                   <input className={inputCls} value={form.groupSize} onChange={e => setField('groupSize', e.target.value)} placeholder="e.g. 2 – 12 people" />
                 </div>
                 <div>
-                  <label className={labelCls}>Price (USD)</label>
+                  <label className={labelCls}>Price (USD per person)</label>
                   <input className={inputCls} type="number" min={0} step={1} value={form.price} onChange={e => setField('price', Number(e.target.value))} />
                 </div>
               </div>
@@ -562,7 +562,7 @@ export default function ItinerariesManager() {
                   <th className="px-4 py-3">Destination</th>
                   <th className="px-4 py-3">Tier</th>
                   <th className="px-4 py-3">Duration</th>
-                  <th className="px-4 py-3">Price</th>
+                  <th className="px-4 py-3">Price / Person</th>
                   <th className="px-4 py-3 text-right">Actions</th>
                 </tr>
               </thead>
@@ -611,6 +611,7 @@ export default function ItinerariesManager() {
                           <DollarSign size={13} className="text-brand" />
                           {it.price.toLocaleString()}
                         </div>
+                        <span className="text-[10px] text-charcoal/50 block">per person</span>
                       </td>
                       <td className="px-4 py-3 text-right">
                         <div className="flex items-center justify-end gap-1">

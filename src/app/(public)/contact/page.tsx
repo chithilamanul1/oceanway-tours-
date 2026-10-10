@@ -56,19 +56,39 @@ export default function ContactPage() {
               ))}
             </ul>
 
-            <div className="mt-8 pt-6 border-t border-line/50">
+            <div className="mt-8 pt-6 border-t border-line/50 space-y-3">
+              <a
+                href={contactInfo.tripadvisor}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3.5 bg-white rounded-2xl border border-line shadow-sm hover:shadow-md transition-shadow group"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-sand flex items-center justify-center p-1.5 border border-line/40 shrink-0">
+                    <img src="/tripadvisor-logo.png" alt="TripAdvisor" className="w-full h-full object-contain" />
+                  </div>
+                  <div>
+                    <p className="text-[11px] font-semibold text-charcoal/70">Verified on TripAdvisor</p>
+                    <p className="text-sm font-bold text-forest group-hover:text-[#00AF87] transition-colors">5.0 ★ Reviews</p>
+                  </div>
+                </div>
+                <span className="text-xs font-bold text-[#00AF87] bg-[#00AF87]/10 px-3 py-1.5 rounded-full flex items-center gap-1 shrink-0">
+                  Profile ↗
+                </span>
+              </a>
+
               <a
                 href={contactInfo.googleBusiness}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 bg-white rounded-2xl border border-line shadow-sm hover:shadow-md transition-shadow group"
+                className="flex items-center justify-between p-3.5 bg-white rounded-2xl border border-line shadow-sm hover:shadow-md transition-shadow group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-sand flex items-center justify-center p-2 border border-line/40">
+                  <div className="w-10 h-10 rounded-full bg-sand flex items-center justify-center p-2 border border-line/40 shrink-0">
                     <img src="/google-logo.png" alt="Google" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-charcoal/70">Verified on Google</p>
+                    <p className="text-[11px] font-semibold text-charcoal/70">Verified on Google</p>
                     <p className="text-sm font-bold text-forest group-hover:text-brand transition-colors">5.0 ★ Google Reviews</p>
                   </div>
                 </div>

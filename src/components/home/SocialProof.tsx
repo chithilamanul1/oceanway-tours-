@@ -28,8 +28,14 @@ export default function SocialProof() {
 
           <div className="w-px h-12 bg-line hidden md:block" />
 
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md p-1.5 overflow-hidden border border-line/50">
+          <a
+            href={contactInfo.tripadvisor || 'https://www.tripadvisor.com/Attraction_Review-g946550-d34681299-Reviews-Oceanway_Tours_Pvt_Ltd-Katana_Western_Province.html'}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Read OceanWay Tours reviews on TripAdvisor"
+            className="flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity group"
+          >
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md p-1.5 overflow-hidden border border-line/50 group-hover:border-[#00AF87] transition-colors">
               <img src="/tripadvisor-logo.png" alt="TripAdvisor" className="w-full h-full object-cover" />
             </div>
             <div>
@@ -38,9 +44,9 @@ export default function SocialProof() {
                   <Star key={i} size={16} fill="currentColor" />
                 ))}
               </div>
-              <p className="text-sm font-bold text-forest">5.0/5 on TripAdvisor</p>
+              <p className="text-sm font-bold text-forest group-hover:text-[#00AF87] transition-colors">5.0/5 on TripAdvisor ↗</p>
             </div>
-          </div>
+          </a>
 
           <div className="w-px h-12 bg-line hidden sm:block" />
 

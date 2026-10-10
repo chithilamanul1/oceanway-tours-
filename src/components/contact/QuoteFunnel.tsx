@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { destinationTags, tourThemes } from '@/types/content';
 import { Check, ArrowRight, User } from 'lucide-react';
@@ -11,6 +11,27 @@ export default function QuoteFunnel() {
     name: '', email: '', phone: '', destination: '', dates: '', travellers: '2', budget: '', theme: '', message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const dest = params.get('destination') || '';
+      const travelersParam = params.get('travellers') || params.get('travelers') || '';
+      const title = params.get('title') || '';
+      const total = params.get('total') || '';
+
+      if (dest || travelersParam || title) {
+        setFormData((prev) => ({
+          ...prev,
+          destination: dest || prev.destination,
+          travellers: travelersParam || prev.travellers,
+          message: title 
+            ? `Inquiring about package "${title}" for ${travelersParam || '2'} travelers${total ? ` (Calculated estimate: $${Number(total).toLocaleString()})` : ''}. ${prev.message}`
+            : prev.message,
+        }));
+      }
+    }
+  }, []);
 
   const handleNext = () => setStep((s) => Math.min(s + 1, 2));
 

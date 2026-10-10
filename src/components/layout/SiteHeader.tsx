@@ -46,6 +46,16 @@ export default function SiteHeader() {
 
           <div className="flex items-center gap-3">
             <a 
+              href={contactInfo.tripadvisor} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              title="TripAdvisor Reviews" 
+              className="hover:text-mint transition-colors flex items-center gap-1.5 text-xs bg-white/15 px-2.5 py-0.5 rounded-full font-medium"
+            >
+              <img src="/tripadvisor-logo.png" alt="TripAdvisor" className="w-3.5 h-3.5 object-contain" />
+              <span>TripAdvisor 5.0 ★</span>
+            </a>
+            <a 
               href={contactInfo.googleBusiness} 
               target="_blank" 
               rel="noopener noreferrer" 
@@ -160,7 +170,16 @@ export default function SiteHeader() {
               Get a Quote
             </Link>
 
-            <div className="pt-2 flex items-center justify-center gap-5 text-forest/70 border-t border-line">
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-3 text-forest/70 border-t border-line">
+              <a 
+                href={contactInfo.tripadvisor} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-brand transition-colors text-xs font-semibold flex items-center gap-1.5 bg-sand px-2.5 py-1 rounded-full"
+              >
+                <img src="/tripadvisor-logo.png" alt="TripAdvisor" className="w-3.5 h-3.5 object-contain" />
+                <span>TripAdvisor 5.0 ★</span>
+              </a>
               <a 
                 href={contactInfo.googleBusiness} 
                 target="_blank" 
