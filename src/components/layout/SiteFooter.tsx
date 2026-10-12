@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { contactInfo, logoUrl } from '@/data/siteContent';
+import LanguageSelector from '@/components/i18n/LanguageSelector';
 
 export default function SiteFooter() {
   return (
@@ -130,7 +131,8 @@ export default function SiteFooter() {
             &copy; 2026 OceanWay Tours. All rights reserved.<br className="md:hidden" />
             <span className="hidden md:inline"> | </span>Made by <a href="https://seranex.lk" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline decoration-white/30 underline-offset-4">Seranex.lk</a> with love by Chithila Manul.
           </p>
-          <div className="flex gap-6 text-sm">
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-5 text-sm">
+            <LanguageSelector variant="topbar" />
             <Link href="/privacy" className="text-mist/60 hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="text-mist/60 hover:text-white transition-colors">Terms of Service</Link>
             <Link href="/admin" className="text-mist/60 hover:text-white transition-colors">Admin Login</Link>

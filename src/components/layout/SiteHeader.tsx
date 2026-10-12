@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Mail, Phone, Menu, X, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { contactInfo, logoUrl } from '@/data/siteContent';
+import LanguageSelector from '@/components/i18n/LanguageSelector';
 
 export default function SiteHeader() {
   const pathname = usePathname();
@@ -45,6 +46,7 @@ export default function SiteHeader() {
           </div>
 
           <div className="flex items-center gap-3">
+            <LanguageSelector variant="topbar" />
             <a 
               href={contactInfo.tripadvisor} 
               target="_blank" 
@@ -118,25 +120,30 @@ export default function SiteHeader() {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center gap-6">
-            <Link href="/contact" className="font-medium text-forest hover:text-brand transition-colors">
+          <div className="hidden lg:flex items-center gap-4">
+            <LanguageSelector variant="header" />
+            <Link href="/contact" className="font-medium text-forest hover:text-brand transition-colors text-sm">
               Contact Us
             </Link>
             <Link
               href="/contact"
-              className="bg-brand text-white px-6 py-2.5 rounded-full font-medium hover:bg-forest transition-colors"
+              className="bg-brand text-white px-6 py-2.5 rounded-full font-medium hover:bg-forest transition-colors text-sm"
             >
               Get a Quote
             </Link>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button
-            className="lg:hidden text-forest p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Actions: Language Selector & Menu Toggle */}
+          <div className="lg:hidden flex items-center gap-2">
+            <LanguageSelector variant="header" />
+            <button
+              className="text-forest p-2 rounded-lg hover:bg-sand"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -169,6 +176,10 @@ export default function SiteHeader() {
             >
               Get a Quote
             </Link>
+
+            <div className="pt-2">
+              <LanguageSelector variant="mobile" />
+            </div>
 
             <div className="pt-2 flex flex-wrap items-center justify-center gap-3 text-forest/70 border-t border-line">
               <a 

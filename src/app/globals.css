@@ -36,3 +36,41 @@ body {
   background-color: #0a4dab;
   color: #ffffff;
 }
+
+/* ─── Google Translate Overrides & Clean Brand Styling ───────────────────── */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.goog-text-highlight {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#google_translate_element {
+  display: none !important;
+}
+
+.notranslate {
+  translate: no;
+}
+
+/* RTL adjustment for Arabic */
+html[dir='rtl'] body {
+  direction: rtl;
+}
