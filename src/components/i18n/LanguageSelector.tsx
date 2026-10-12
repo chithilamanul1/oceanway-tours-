@@ -58,12 +58,14 @@ export default function LanguageSelector({
 
   const filteredLanguages = SUPPORTED_LANGUAGES.filter((lang) => {
     if (!searchQuery.trim()) return true;
-    const q = searchQuery.toLowerCase();
-    return (
-      lang.name.toLowerCase().includes(q) ||
-      lang.nativeName.toLowerCase().includes(q) ||
-      lang.code.toLowerCase().includes(q)
+    const q = searchQuery.toLowerCase().trim();
+    const matchesName = lang.name.toLowerCase().includes(q);
+    const matchesNative = lang.nativeName.toLowerCase().includes(q);
+    const matchesCode = lang.code.toLowerCase().includes(q);
+    const matchesAlias = lang.aliases?.some(
+      (a) => a.toLowerCase().includes(q) || q.includes(a.toLowerCase())
     );
+    return matchesName || matchesNative || matchesCode || matchesAlias;
   });
 
   return (
@@ -150,6 +152,35 @@ export default function LanguageSelector({
               className="w-full pl-8 pr-3 py-1.5 text-xs bg-sand/50 border border-line rounded-lg focus:outline-none focus:ring-1 focus:ring-brand focus:bg-white"
             />
           </div>
+
+          {/* Quick Popular Picks */}
+          {!searchQuery && (
+            <div className="mb-3 pb-3 border-b border-line/60">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-charcoal/50 block mb-1.5">
+                Popular with Our Travelers
+              </span>
+              <div className="flex flex-wrap gap-1.5">
+                {SUPPORTED_LANGUAGES.filter((l) => l.popular).map((lang) => {
+                  const isSelected = lang.code === currentCode;
+                  return (
+                    <button
+                      key={`pop-${lang.code}`}
+                      type="button"
+                      onClick={() => handleSelectLanguage(lang.code)}
+                      className={`px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 border transition-all ${
+                        isSelected
+                          ? 'bg-brand text-white border-brand shadow-xs'
+                          : 'bg-sand/40 border-line hover:border-brand text-forest hover:bg-white'
+                      }`}
+                    >
+                      <span>{lang.flag}</span>
+                      <span>{lang.name}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* Languages Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 max-h-64 overflow-y-auto pr-1">
